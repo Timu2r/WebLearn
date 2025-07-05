@@ -1,0 +1,9 @@
+.user {
+	position: relative;
+	top: 50px;
+	background: url('./assets/Simple Shiny2.svg') no-repeat center center / cover;
+	width: 100%;
+	min-height: 100vh;
+	z-index: -1;
+	overflow: hidden;
+}
