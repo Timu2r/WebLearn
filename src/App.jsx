@@ -21,7 +21,7 @@ import BasicOperators from './pages/BasicOperators 2.8.jsx';
 
 export default function App() {
   return (
-    <Router basename="/Learn-Front">
+    <Router basename="/WebLearn">
       <ScrollToTop />
       <Navibar />
       <Routes>
