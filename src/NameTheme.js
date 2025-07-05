@@ -137,6 +137,8 @@ let NameThame = [
     theme: "Основы JavaScript",
     path: "/JsFeaturesSummary"
   },
+
+  //! Качество кода
 ];
 
 export default NameThame;
