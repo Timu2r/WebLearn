@@ -16,7 +16,7 @@ export default function ArrowFunctionsDoc() {
 			</p>
 			<p>
 				Он называется «функции-стрелки» или «стрелочные функции» (arrow
-				functions), т.к. выглядит следующим образом:
+				functions) т.к. выглядит следующим образом:
 			</p>
 			<CodeNote js={`let func = (arg1, arg2, ...argN) => expression;`} />
 			<p>
