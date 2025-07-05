@@ -79,63 +79,63 @@ let NameThame = [
   },
   {
     id: "2.9",
-    title: "",
+    title: " Операторы сравнения",
     theme: "Основы JavaScript",
-    path: "/Editor"
+    path: "/ComparisonOperators"
   },
   {
     id: "2.10",
-    title: "",
+    title: "Условное ветвление: if, '?'",
     theme: "Основы JavaScript",
-    path: "/Console"
+    path: "/ConditionalBranching"
   },
 	{
     id: "2.11",
-    title: "",
+    title: "Логические операторы",
     theme: "Основы JavaScript",
-    path: "/Editor"
+    path: "/LogicalOperators"
   },
   {
     id: "2.12",
-    title: "",
+    title: "Операторы нулевого слияния и присваивания: '??', '??='",
     theme: "Основы JavaScript",
-    path: "/Console"
+    path: "/NullishCoalescing"
   },
 	{
     id: "2.13",
-    title: "",
+    title: "Циклы while и for",
     theme: "Основы JavaScript",
-    path: "/Introduction"
+    path: "/Loops"
   },
   {
     id: "2.14",
-    title: "",
+    title: "Конструкция switch",
     theme: "Основы JavaScript",
-    path: "/Reference"
+    path: "/SwitchStatement"
   },
   {
     id: "2.15",
-    title: "",
+    title: "Функции",
     theme: "Основы JavaScript",
-    path: "/Editor"
+    path: "/FunctionsDoc"
   },
   {
     id: "2.16",
-    title: "",
+    title: "Function Expression",
     theme: "Основы JavaScript",
-    path: "/Console"
+    path: "/FunctionExpressionDoc"
   },
 	{
     id: "2.17",
-    title: "",
+    title: "Стрелочные функции, основы",
     theme: "Основы JavaScript",
-    path: "/Editor"
+    path: "/ArrowFunctionsDoc"
   },
   {
     id: "2.18",
-    title: "",
+    title: "Особенности JavaScript",
     theme: "Основы JavaScript",
-    path: "/Console"
+    path: "/JsFeaturesSummary"
   },
 ];
 

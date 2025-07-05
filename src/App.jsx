@@ -18,6 +18,16 @@ import StartPanel from './components/StartPanel.jsx';
 import InteractionAlert from './pages/Взаимодействие 2.6.jsx';
 import TypeConversion from './pages/TypeConversion 2.7.jsx';
 import BasicOperators from './pages/BasicOperators 2.8.jsx';
+import ComparisonOperators from './pages/ComparisonOperators 2.9.jsx';
+import ConditionalBranching from './pages/ConditionalBranching 2.10.jsx';
+import LogicalOperators from './pages/LogicalOperators 2.11.jsx';
+import NullishCoalescing from './pages/NullishCoalescing 2.12.jsx';
+import Loops from './pages/Loops 2.13.jsx';
+import SwitchStatement from './pages/SwitchStatement 2.14.jsx';
+import FunctionsDoc from './pages/FunctionsDoc 2.15.jsx';
+import FunctionExpressionDoc from './pages/FunctionExpressionDoc 2.16.jsx';
+import ArrowFunctionsDoc from './pages/ArrowFunctionsDoc 2.17.jsx';
+import JsFeaturesSummary from './pages/JsFeaturesSummary 2.18.jsx';
 
 export default function App() {
   return (
@@ -39,6 +49,16 @@ export default function App() {
         <Route path="/InteractionAlert" element={<InteractionAlert/>} />
         <Route path="/TypeConversion" element={<TypeConversion/>} />
         <Route path="/BasicOperators" element={<BasicOperators/>} />
+        <Route path="/ComparisonOperators" element={<ComparisonOperators/>} />
+        <Route path="/ConditionalBranching" element={<ConditionalBranching/>} />
+        <Route path="/LogicalOperators" element={<LogicalOperators/>} />
+        <Route path="/NullishCoalescing" element={<NullishCoalescing/>} />
+        <Route path="/Loops" element={<Loops/>} />
+        <Route path="/SwitchStatement" element={<SwitchStatement/>} />
+        <Route path="/FunctionsDoc" element={<FunctionsDoc/>} />
+        <Route path="/FunctionExpressionDoc" element={<FunctionExpressionDoc/>} />
+        <Route path="/ArrowFunctionsDoc" element={<ArrowFunctionsDoc/>} />
+        <Route path="/JsFeaturesSummary" element={<JsFeaturesSummary/>} />
       </Routes>
       <Footer />
     </Router>
