@@ -1,0 +1,824 @@
+<div className='min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'>
+				{/* Hero Section */}
+				<div className='relative overflow-hidden'>
+					<div className='absolute inset-0 bg-black opacity-50'></div>
+					<div className='relative container mx-auto px-6 py-20 text-center'>
+						<div className='animate-pulse'>
+							<h1 className='text-6xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6'>
+								WebDev Academy
+							</h1>
+						</div>
+						<p className='text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed'>
+							Погрузитесь в мир веб-разработки с нашими интерактивными курсами
+							по
+							<span className='text-yellow-400 font-semibold'> JavaScript</span>
+							,<span className='text-orange-400 font-semibold'> HTML</span> и
+							<span className='text-blue-400 font-semibold'> CSS</span>
+						</p>
+
+	
+					</div>
+				</div>
+
+				{/* Features Section */}
+				<div className='container mx-auto px-6 py-16'>
+					<div className='text-center mb-16'>
+						<h2 className='text-4xl font-bold text-white mb-4'>
+							Почему выбирают нас?
+						</h2>
+						<p className='text-gray-400 text-lg'>
+							Современный подход к изучению веб-технологий
+						</p>
+					</div>
+
+					<div className='grid md:grid-cols-3 gap-8 mb-16'>
+						<div className='bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-cyan-500 transition-all duration-300 hover:transform hover:scale-105'>
+							<div className='text-4xl mb-4'>🎯</div>
+							<h3 className='text-xl font-bold text-white mb-3'>
+								Практический подход
+							</h3>
+							<p className='text-gray-400'>
+								Изучайте на реальных примерах и проектах
+							</p>
+						</div>
+
+						<div className='bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-purple-500 transition-all duration-300 hover:transform hover:scale-105'>
+							<div className='text-4xl mb-4'>📚</div>
+							<h3 className='text-xl font-bold text-white mb-3'>
+								Структурированное обучение
+							</h3>
+							<p className='text-gray-400'>От основ до продвинутых техник</p>
+						</div>
+
+						<div className='bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-pink-500 transition-all duration-300 hover:transform hover:scale-105'>
+							<div className='text-4xl mb-4'>⚡</div>
+							<h3 className='text-xl font-bold text-white mb-3'>
+								Интерактивность
+							</h3>
+							<p className='text-gray-400'>
+								Живые примеры кода и консоль разработчика
+							</p>
+						</div>
+					</div>
+
+					{/* Course Sections */}
+					<div className='space-y-12'>
+						{courses.map((course, index) => (
+							<div
+								key={index}
+								className='bg-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700'
+							>
+								<div className='flex items-center mb-6'>
+									<div className='text-5xl mr-4'>{course.icon}</div>
+									<div>
+										<h3
+											className={`text-3xl font-bold bg-gradient-to-r ${course.color} bg-clip-text text-transparent`}
+										>
+											{course.title}
+										</h3>
+										<p className='text-gray-400 text-lg'>
+											{course.description}
+										</p>
+									</div>
+								</div>
+
+								<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+									{course.lessons.map((lesson, lessonIndex) => (
+										<button
+											key={lessonIndex}
+											onClick={() => handleNavigation(lesson.path)}
+											className={`bg-gradient-to-r ${course.color} p-6 rounded-xl text-white font-semibold
+                             hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 
+                             hover:transform hover:scale-105 active:scale-95`}
+										>
+											<div className='flex items-center justify-between'>
+												<span className='text-left'>{lesson.name}</span>
+												<svg
+													className='w-5 h-5 ml-2'
+													fill='none'
+													stroke='currentColor'
+													viewBox='0 0 24 24'
+												>
+													<path
+														strokeLinecap='round'
+														strokeLinejoin='round'
+														strokeWidth={2}
+														d='M9 5l7 7-7 7'
+													/>
+												</svg>
+											</div>
+										</button>
+									))}
+								</div>
+							</div>
+						))}
+					</div>
+
+					{/* Call to Action */}
+					<div className='text-center mt-16 p-12 bg-gradient-to-r from-purple-800/50 to-pink-800/50 rounded-3xl border border-purple-500/30'>
+						<h2 className='text-4xl font-bold text-white mb-4'>
+							Готовы начать обучение?
+						</h2>
+						<p className='text-gray-300 text-lg mb-8'>
+							Присоединяйтесь к тысячам разработчиков, которые уже изучают с
+							нами
+						</p>
+						<button
+							onClick={() => handleNavigation('/Introduction')}
+							className='bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-12 py-4 rounded-full text-xl font-bold
+                     hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 
+                     hover:transform hover:scale-105 active:scale-95'
+						>
+							Начать изучение 🚀
+						</button>
+					</div>
+				</div>
+
+				{/* Animated Background Elements */}
+				<div className='fixed inset-0 pointer-events-none'>
+					<div className='absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse'></div>
+					<div className='absolute top-3/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000'></div>
+					<div className='absolute top-1/2 left-1/2 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-2000'></div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			/* Container styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+*{
+  border: none;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-yellow-400 {
+  color: #facc15;
+}
+
+.text-orange-400 {
+  color: #fb923c;
+}
+
+.text-blue-400 {
+  color: #60a5fa;
+}
+
+.text-green-400 {
+  color: #4ade80;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+/* Spacing utilities */
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.space-y-12 > * + * {
+  margin-top: 3rem;
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .md-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Background and border utilities */
+.bg-gradient-to-br.from-slate-900.via-purple-900.to-slate-900 {
+  background-image: linear-gradient(to bottom right, #0f172a, #5b21b6, #0f172a);
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-gray-800 {
+  background-color: #1f2937;
+}
+
+.bg-gray-800-50 {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+.bg-gray-800-30 {
+  background-color: rgba(31, 41, 55, 0.3);
+}
+
+.bg-gradient-to-r.from-purple-800-50.to-pink-800-50 {
+  background-image: linear-gradient(to right, rgba(88, 28, 135, 0.5), rgba(219, 39, 119, 0.5));
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.border-gray-600 {
+  border-color: #4b5563;
+}
+
+.border-gray-700 {
+  border-color: #374151;
+}
+
+.border-cyan-500 {
+  border-color: #06b6d4;
+}
+
+.border-purple-500 {
+  border-color: #8b5cf6;
+}
+
+.border-purple-500-30 {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.border-pink-500 {
+  border-color: #ec4899;
+}
+
+/* Effects and transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.hover-transform:hover {
+  transform: scale(1.05);
+}
+
+.active-scale:active {
+  transform: scale(0.95);
+}
+
+.hover-shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.hover-shadow-purple-500-25:hover {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+}
+
+.hover-shadow-cyan-500-25:hover {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
+}
+
+/* Gradients and text effects */
+.bg-gradient-to-r.from-cyan-400.via-purple-500.to-pink-500 {
+  background-image: linear-gradient(to right, #22d3ee, #8b5cf6, #ec4899);
+}
+
+.bg-gradient-to-r.from-yellow-400.to-orange-500 {
+  background-image: linear-gradient(to right, #facc15, #f97316);
+}
+
+.bg-gradient-to-r.from-blue-400.to-purple-500 {
+  background-image: linear-gradient(to right, #60a5fa, #a855f7);
+}
+
+.bg-gradient-to-r.from-cyan-500.to-purple-600 {
+  background-image: linear-gradient(to right, #06b6d4, #9333ea);
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Positioning and layout */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.top-1_4 {
+  top: 50%;
+}
+
+.top-1_2 {
+  top: 50%;
+}
+
+.top-3_4 {
+  top: 75%;
+}
+
+.left-1_4 {
+  left: 25%;
+}
+
+.left-1_2 {
+  left: 50%;
+}
+
+.right-1_4 {
+  right: 25%;
+}
+
+.-top-6 {
+  top: -1.5rem;
+}
+
+.-top-10 {
+  top: -2.5rem;
+}
+
+.-top-16 {
+  top: -4rem;
+}
+
+.transform {
+  transform: translate(0, 0);
+}
+
+.-translate-x-1_2 {
+  transform: translateX(-50%);
+}
+
+.translate-x-1_2 {
+  transform: translateX(50%);
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+/* Background decorative elements */
+.w-64 {
+  width: 16rem;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.bg-purple-500-10 {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.bg-cyan-500-10 {
+  background-color: rgba(6, 182, 212, 0.1);
+}
+
+.bg-pink-500-10 {
+  background-color: rgba(236, 72, 153, 0.1);
+}
+
+.blur-3xl {
+  filter: blur(64px);
+}
+
+/* Flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+/* SVG and button utilities */
+.w-5 {
+  width: 1.25rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+<table style={{ width: '100%', borderCollapse: 'collapse' }}>
+					<thead>
+						<tr>
+							<th
+								style={{
+									padding: '10px',
+									borderBottom: '1px solid #6c757d',
+									textAlign: 'left',
+								}}
+							>
+								Оператор
+							</th>
+							<th
+								style={{
+									padding: '10px',
+									borderBottom: '1px solid #6c757d',
+									textAlign: 'left',
+								}}
+							>
+								Описание
+							</th>
+							<th
+								style={{
+									padding: '10px',
+									borderBottom: '1px solid #6c757d',
+									textAlign: 'left',
+								}}
+							>
+								Символ
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								AND(и)
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Побитовое И
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>&</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								OR(или)
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Побитовое ИЛИ
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>|</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								XOR
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Побитовое исключающее ИЛИ
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>^</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								NOT(не)
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Побитовое НЕ
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>~</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								LEFT SHIFT
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Левый сдвиг
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>{'<<'}</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								RIGHT SHIFT
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								Правый сдвиг
+							</td>
+							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
+								<Badge bg='secondary'>{'>>'}</Badge>
+							</td>
+						</tr>
+						<tr>
+							<td style={{ padding: '8px' }}>ZERO-FILL RIGHT SHIFT</td>
+							<td style={{ padding: '8px' }}>
+								Правый сдвиг с заполнением нулями
+							</td>
+							<td style={{ padding: '8px' }}>
+								<Badge bg='secondary'>{'>>>'}</Badge>
+							</td>
+						</tr>
+					</tbody>
+				</table>
