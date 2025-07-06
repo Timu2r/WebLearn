@@ -4,6 +4,8 @@ import CodeNote from '../components/CodeNote'
 import CodeJs from '../components/CodeJs'
 import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function InteractionAlert() {
 	return (
@@ -187,6 +189,7 @@ export default function InteractionAlert() {
 						<li>Визуальное отображение окон зависит от браузера, и мы не можем изменить их вид.</li>
 					</ol>
 					<p>Такова цена простоты. Есть другие способы показать более приятные глазу окна с богатой функциональностью для взаимодействия с пользователем, но если «навороты» не имеют значения, то данные методы работают отлично.</p>
+					<TaskViewer tasks={tasks['2.6']} />
 		</Container>
 	)
 }

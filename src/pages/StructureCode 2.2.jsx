@@ -5,6 +5,8 @@ import ArrowNavigator from '../components/ArrowNavigator'
 import CodeRunner from '../components/CodeRunner' // Предполагается, что CodeRunner может принимать и HTML, и JS
 import CodeNote from '../components/CodeNote' // Для примеров, которые не требуют выполнения
 import CodeJs from '../components/CodeJs' // Для примеров, где HTML и JS показываются отдельно
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function StructureCode() {
 	const jsCode1 = `alert('Привет'); alert('Мир');`

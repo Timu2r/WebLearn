@@ -4,6 +4,8 @@ import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeJs from '../components/CodeJs'
 import CodeNote from '../components/CodeNote'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function LogicalOperators() {
 	return (
@@ -489,6 +491,8 @@ alert( !!null ); // false`}
 				<Badge bg='secondary'>if</Badge> для условий, логические операторы для
 				логических операций.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.11']} />  
 		</Container>
 	)
 }

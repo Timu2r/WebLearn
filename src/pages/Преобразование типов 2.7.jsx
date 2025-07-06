@@ -3,6 +3,8 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeJs from '../components/CodeJs'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function TypeConversion() {
 	return (
@@ -448,6 +450,8 @@ alert( Boolean(" ") ); // пробел это тоже true (любая непу
 				главе Преобразование объектов в примитивы, посвящённой только объектам,
 				сразу после того, как узнаем больше про основы JavaScript.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.7']} />
 		</Container>
 	)
 }

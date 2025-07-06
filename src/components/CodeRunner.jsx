@@ -8,6 +8,7 @@ import "../style/CodeRunner.css";
 const CodeRunner = ({ html, js }) => {
   const iframeRef = useRef(null);
   const [highlightedHtml, setHighlightedHtml] = useState("");
+  const [output, setOutput] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,6 +16,7 @@ const CodeRunner = ({ html, js }) => {
   }, [html]);
 
   const runCode = () => {
+    setOutput([]);
     setError(null);
     const iframe = iframeRef.current;
     if (iframe) {
@@ -25,8 +27,13 @@ const CodeRunner = ({ html, js }) => {
         <html>
           <head>
             <script>
+              const originalConsoleLog = console.log;
+              console.log = (...args) => {
+                originalConsoleLog(...args);
+                window.parent.postMessage({ type: 'log', message: args.join(' ') }, '*');
+              };
               window.onerror = function(message, source, lineno, colno, error) {
-                parent.postMessage({ type: 'error', message, lineno, colno }, '*');
+                window.parent.postMessage({ type: 'error', message, lineno, colno }, '*');
               };
             </script>
           </head>
@@ -42,16 +49,19 @@ const CodeRunner = ({ html, js }) => {
   };
 
   useEffect(() => {
-    const handleError = (event) => {
-      if (event.data.type === "error") {
-        const errorMessage = `Ошибка: ${event.data.message} (Строка: ${event.data.lineno}, Колонка: ${event.data.colno})`;
-        setError(errorMessage);
-        alert(errorMessage);
+    const handleMessage = (event) => {
+      if (event.source === iframeRef.current.contentWindow) {
+        if (event.data.type === "log") {
+          setOutput(prev => [...prev, event.data.message]);
+        } else if (event.data.type === "error") {
+          const errorMessage = `Ошибка: ${event.data.message} (Строка: ${event.data.lineno}, Колонка: ${event.data.colno})`;
+          setError(errorMessage);
+        }
       }
     };
 
-    window.addEventListener("message", handleError);
-    return () => window.removeEventListener("message", handleError);
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
   }, []);
 
   const renderLineNumbers = (code) => {
@@ -70,6 +80,14 @@ const CodeRunner = ({ html, js }) => {
         {renderLineNumbers(highlightedHtml)}
       </pre>
       {error && <div className="error-panel">{error}</div>}
+      {output.length > 0 && (
+        <div className="output-console mt-3">
+          <h5>Вывод:</h5>
+          {output.map((line, index) => (
+            <p key={index} className="output-line">{line}</p>
+          ))}
+        </div>
+      )}
       <iframe ref={iframeRef} className="result-frame" />
     </div>
   );

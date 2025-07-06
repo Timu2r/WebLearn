@@ -3,6 +3,8 @@ import ArrowNavigator from '../components/ArrowNavigator'
 import CodeNote from '../components/CodeNote'
 import CodeJs from '../components/CodeJs'
 import { FaInfoCircle } from 'react-icons/fa'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function DataTypes() {
 	return (
@@ -827,6 +829,8 @@ export default function DataTypes() {
 				В следующих главах мы сконцентрируемся на примитивных значениях, а когда
 				познакомимся с ними, перейдём к объектам.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.5']} />
 		</Container>
 	)
 }

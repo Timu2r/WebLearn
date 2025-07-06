@@ -2,6 +2,8 @@ import { Container } from 'react-bootstrap'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeNote from '../components/CodeNote'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function UseStrict() {
 	const jsUseStric1 = ` "use strict";
@@ -299,6 +301,8 @@ export default function UseStrict() {
 				Все примеры в этом учебнике подразумевают исполнение в строгом режиме,
 				за исключением случаев (очень редких), когда оговорено иное.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.3']} />
 		</Container>
 	)
 }

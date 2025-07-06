@@ -4,6 +4,8 @@ import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeJs from '../components/CodeJs'
 import CodeNote from '../components/CodeNote'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function FunctionExpressionDoc() {
 	return (
@@ -542,6 +544,8 @@ welcome(); // теперь всё в порядке`}
 					в будущем.
 				</li>
 			</ul>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.16']} />
 		</Container>
 	)
 }

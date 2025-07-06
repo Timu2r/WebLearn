@@ -3,6 +3,8 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeJs from '../components/CodeJs'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function ComparisonOperators() {
 	return (
@@ -440,6 +442,9 @@ alert( undefined == 0 ); // false (3)`}
 					<Badge bg='secondary'>null/undefined</Badge>.
 				</li>
 			</ul>
+
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.9']} />
 		</Container>
 	)
 }

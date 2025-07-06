@@ -138,7 +138,8 @@ let NameThame = [
     path: "/JsFeaturesSummary"
   },
 
-  //! Качество кода
 ];
 
 export default NameThame;
+
+

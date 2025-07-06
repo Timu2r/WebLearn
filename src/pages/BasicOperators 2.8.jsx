@@ -3,6 +3,8 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeJs from '../components/CodeJs'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function BasicOperators() {
 	return (
@@ -953,6 +955,8 @@ for (a = 1, b = 3, c = a * b; a < 10; a++) {
 				несколько выражений в одной строке, возвращая результат только
 				последнего.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.8']} />
 		</Container>
 	)
 }

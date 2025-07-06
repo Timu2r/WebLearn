@@ -80,3 +80,23 @@ iframe {
 	padding: 10px;
 	border-radius: 5px;
 }
+
+.output-console {
+  background-color: #282c34;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.output-console h5 {
+  color: #61dafb;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.output-console p {
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+}

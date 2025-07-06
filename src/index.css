@@ -60,8 +60,7 @@
 }
 
 * {
-  scrollbar-width: thin; 
-  scrollbar-color: #ff00008a #181818; 
+  scrollbar-width: thin;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;

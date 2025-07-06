@@ -4,6 +4,8 @@ import CodeNote from '../components/CodeNote'
 import CodeJs from '../components/CodeJs'
 import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function Variables() {
 	return (
@@ -772,6 +774,8 @@ alert(color); // #0000ff`}
 				Переменные должны быть названы таким образом, чтобы мы могли легко
 				понять, что у них внутри.
 			</p>
+			<h1>задачи</h1>
+			<TaskViewer tasks={tasks['2.4']} />
 		</Container>
 	)
 }

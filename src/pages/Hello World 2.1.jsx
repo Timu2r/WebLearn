@@ -4,6 +4,8 @@ import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeRunner from '../components/CodeRunner'
 import CodeNote from '../components/CodeNote'
+import TaskViewer from '../components/TaskViewer/TaskViewer'
+import { tasks } from '../data/tasks'
 
 export default function HelloWorld() {
 	const htmlExample1 = ` <!DOCTYPE HTML>
@@ -279,8 +281,10 @@ export default function HelloWorld() {
 				постараемся не отвлекаться на детали реализации в браузере. Мы
 				воспользуемся браузером для запуска JavaScript, это удобно для
 				онлайн-демонстраций, но это только одна из платформ, на которых
-				работает этот язык.
-			</p>
-		</Container>
+									работает этот язык.
+				</p>
+				<h1>задачи</h1>
+				<TaskViewer tasks={tasks['2.1']} />
+			</Container>
 	)
 }
