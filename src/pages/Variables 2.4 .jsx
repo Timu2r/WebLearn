@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap'
+import { Container, Badge } from 'react-bootstrap'
 import ArrowNavigator from '../components/ArrowNavigator'
 import CodeNote from '../components/CodeNote'
 import CodeJs from '../components/CodeJs'
@@ -7,7 +7,7 @@ import { IoIosWarning } from 'react-icons/io'
 
 export default function Variables() {
 	return (
-		<Container className='text-light mt-5'>
+		<Container className='text-light mt-5 mb-5'>
 			<ArrowNavigator />
 
 			<h1>Переменные</h1>
@@ -16,7 +16,7 @@ export default function Variables() {
 				JavaScript-приложению обычно нужно работать с информацией. Например:
 			</p>
 
-			<ol>
+			<ul>
 				<li>
 					Интернет-магазин – информация может включать продаваемые товары и
 					корзину покупок.
@@ -25,53 +25,42 @@ export default function Variables() {
 					Чат – информация может включать пользователей, сообщения и многое
 					другое.
 				</li>
-			</ol>
+			</ul>
 
 			<p>Переменные используются для хранения этой информации.</p>
 
 			<h2>Переменная</h2>
 
 			<p>
-				
 				<a href='https://ru.wikipedia.org/wiki/Переменная_(программирование)'>
 					Переменная
-				</a>
+				</a>{' '}
 				– это «именованное хранилище» для данных. Мы можем использовать
 				переменные для хранения товаров, посетителей и других данных.
 			</p>
 
 			<p>
-				Для создания переменной в JavaScript используйте ключевое слово
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let.
-				</span>
+				Для создания переменной в JavaScript используйте ключевое слово{' '}
+				<Badge bg='secondary'>let</Badge>.
 			</p>
 			<p>
 				Приведённая ниже инструкция создаёт (другими словами, объявляет)
 				переменную с именем «message»:
 			</p>
 
-			<CodeNote js={` let message;`} />
+			<CodeNote js={`let message;`} />
 
 			<p className='mt-4'>
 				Теперь можно поместить в неё данные (другими словами, определить
-				переменную), используя оператор присваивания
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					
-					=
-				</span>
-				:
+				переменную), используя оператор присваивания{' '}
+				<Badge bg='secondary'>=</Badge>:
 			</p>
 
 			<CodeNote
-				js={` let message;
+				js={`let message;
 
- message = 'Hello'; 
- // сохранить строку 'Hello' в переменной с именем message`}
+message = 'Hello'; 
+// сохранить строку 'Hello' в переменной с именем message`}
 			/>
 
 			<p className='mt-4'>
@@ -80,10 +69,10 @@ export default function Variables() {
 			</p>
 
 			<CodeJs
-				js={` let message;
- message = 'Hello!';
+				js={`let message;
+message = 'Hello!';
 
- alert(message); // показывает содержимое переменной`}
+alert(message); // показывает содержимое переменной`}
 			/>
 
 			<p className='mt-4'>
@@ -92,15 +81,14 @@ export default function Variables() {
 			</p>
 
 			<CodeJs
-				js={` let message;
- message = 'Hello!';
+				js={`let message = 'Hello!';
 
- alert(message); // показывает содержимое переменной`}
+alert(message); // показывает содержимое переменной`}
 			/>
 
 			<p>Мы также можем объявить несколько переменных в одной строке:</p>
 
-			<CodeNote js={` let user = 'John', age = 25, message = 'Hello';`} />
+			<CodeNote js={`let user = 'John', age = 25, message = 'Hello';`} />
 
 			<p>
 				Такой способ может показаться короче, но мы не рекомендуем его. Для
@@ -109,9 +97,9 @@ export default function Variables() {
 			<p>Многострочный вариант немного длиннее, но легче для чтения:</p>
 
 			<CodeNote
-				js={` let user = 'John';
- let age = 25;
- let message = 'Hello';`}
+				js={`let user = 'John';
+let age = 25;
+let message = 'Hello';`}
 			/>
 
 			<p>
@@ -120,7 +108,7 @@ export default function Variables() {
 			</p>
 
 			<CodeNote
-				js={` let user = 'John',
+				js={`let user = 'John',
   age = 25,
   message = 'Hello';`}
 			/>
@@ -128,7 +116,7 @@ export default function Variables() {
 			<p>…Или даже с запятой в начале строки:</p>
 
 			<CodeNote
-				js={` let user = 'John'
+				js={`let user = 'John'
   , age = 25
   , message = 'Hello';`}
 			/>
@@ -138,79 +126,28 @@ export default function Variables() {
 				личного вкуса и эстетики.
 			</p>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.3rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<FaInfoCircle
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#3463ff',
-						}}
-					/>
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						var
-					</span>
-					вместо
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
+			<div className='note-block info-block'>
+				<h1 className='note-block-title'>
+					<FaInfoCircle /> <Badge bg='secondary'>var</Badge> вместо{' '}
+					<Badge bg='secondary'>let</Badge>
 				</h1>
 				<p>
-					В старых скриптах вы также можете найти другое ключевое слово: var
-					вместо let:
+					В старых скриптах вы также можете найти другое ключевое слово:{' '}
+					<Badge bg='secondary'>var</Badge> вместо{' '}
+					<Badge bg='secondary'>let</Badge>:
 				</p>
-				<CodeNote js={` var message = 'Hello';`} />
+				<CodeNote js={`var message = 'Hello';`} />
 				<p>
-					Ключевое слово
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						var
-					</span>
-					– почти то же самое, что и
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
-					. Оно объявляет переменную, но немного по-другому, «устаревшим»
-					способом.
+					Ключевое слово <Badge bg='secondary'>var</Badge> – почти то же самое,
+					что и <Badge bg='secondary'>let</Badge>. Оно объявляет переменную, но
+					немного по-другому, «устаревшим» способом.
 				</p>
 
 				<p>
-					Есть тонкие различия между
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
-					и
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						var
-					</span>
-					, но они пока не имеют для нас значения. Мы подробно рассмотрим их в
-					главе Устаревшее ключевое слово &gt;var&gt;.
+					Есть тонкие различия между <Badge bg='secondary'>let</Badge> и{' '}
+					<Badge bg='secondary'>var</Badge>, но они пока не имеют для нас
+					значения. Мы подробно рассмотрим их в главе «Устаревшее ключевое слово
+					`var`».
 				</p>
 			</div>
 
@@ -225,13 +162,13 @@ export default function Variables() {
 			<p>Мы также можем изменить его столько раз, сколько захотим:</p>
 
 			<CodeJs
-				js={` let message;
+				js={`let message;
 
- message = 'Hello!';
+message = 'Hello!';
 
- message = 'World!'; // значение изменено 
+message = 'World!'; // значение изменено 
 
- alert(message);`}
+alert(message);`}
 			/>
 
 			<p>При изменении значения старые данные удаляются из переменной.</p>
@@ -242,46 +179,23 @@ export default function Variables() {
 			</p>
 
 			<CodeJs
-				js={` let hello = 'Hello world!';
+				js={`let hello = 'Hello world!';
 
- let message;
+let message;
 
- // копируем значение 'Hello world' из переменной hello 
- // в переменную message
+// копируем значение 'Hello world' из переменной hello 
+// в переменную message
 
- message = hello;
+message = hello;
 
- // теперь две переменные содержат одинаковые данные
- alert(hello); // Hello world!
- alert(message); // Hello world!`}
+// теперь две переменные содержат одинаковые данные
+alert(hello); // Hello world!
+alert(message); // Hello world!`}
 			/>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.2rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<IoIosWarning
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#ff9a34',
-							fontSize: '1.5rem',
-						}}
-					/>
-					Повторное объявление вызывает ошибку
+			<div className='note-block warning-block'>
+				<h1 className='note-block-title'>
+					<IoIosWarning /> Повторное объявление вызывает ошибку
 				</h1>
 
 				<p>Переменная может быть объявлена только один раз.</p>
@@ -290,57 +204,29 @@ export default function Variables() {
 				<CodeJs
 					js={`let message = "Это";
 
- // повторение ключевого слова 'let' приводит к ошибке
- let message = "Другое"; 
- // SyntaxError: 'message' has already been declared`}
+// повторение ключевого слова 'let' приводит к ошибке
+let message = "Другое"; 
+// SyntaxError: 'message' has already been declared`}
 				/>
 
 				<p>
 					Поэтому следует объявлять переменную только один раз и затем
-					использовать её уже без
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
-					.
+					использовать её уже без <Badge bg='secondary'>let</Badge>.
 				</p>
 			</div>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.3rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<FaInfoCircle
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#3463ff',
-						}}
-					/>
-					Функциональные языки программирования
+			<div className='note-block info-block'>
+				<h1 className='note-block-title'>
+					<FaInfoCircle /> Функциональные языки программирования
 				</h1>
 				<p>
-					Примечательно, что существуют
+					Примечательно, что существуют{' '}
 					<a href='https://ru.wikipedia.org/wiki/Функциональное_программирование'>
 						функциональные
-					</a>
-					языки программирования, такие как
-					<a href='https://www.scala-lang.org/'>Scala</a> или
-					<a href='https://www.erlang.org/'>Erlang</a> , которые запрещают
+					</a>{' '}
+					языки программирования, такие как{' '}
+					<a href='https://www.scala-lang.org/'>Scala</a> или{' '}
+					<a href='https://www.erlang.org/'>Erlang</a>, которые запрещают
 					изменять значение переменной.
 				</p>
 				<p>
@@ -365,7 +251,7 @@ export default function Variables() {
 
 			<ol>
 				<li>
-					Имя переменной должно содержать только буквы, цифры или символы $ и _.
+					Имя переменной должно содержать только буквы, цифры или символы $ и
 				</li>
 				<li>Первый символ не должен быть цифрой.</li>
 			</ol>
@@ -373,91 +259,48 @@ export default function Variables() {
 			<p>Примеры допустимых имён:</p>
 
 			<CodeNote
-				js={` let userName;
- let test123;`}
+				js={`let userName;
+let test123;`}
 			/>
 
 			<p>
-				Если имя содержит несколько слов, обычно используется
-				<a href='https://ru.wikipedia.org/wiki/CamelCase'>верблюжья нотация</a>
-				, то есть, слова следуют одно за другим, где каждое следующее слово
+				Если имя содержит несколько слов, обычно используется{' '}
+				<a href='https://ru.wikipedia.org/wiki/CamelCase'>верблюжья нотация</a>,
+				то есть, слова следуют одно за другим, где каждое следующее слово
 				начинается с заглавной буквы: myVeryLongName.
 			</p>
 			<p>
-				Самое интересное – знак доллара &#39;$&#39; и подчёркивание &#39;_&#39;
-				также можно использовать в названиях. Это обычные символы, как и буквы,
-				без какого-либо особого значения.
+				Самое интересное – знак доллара <Badge bg='secondary'>$</Badge> и
+				подчёркивание <Badge bg='secondary'>_</Badge> также можно использовать в
+				названиях. Это обычные символы, как и буквы, без какого-либо особого
+				значения.
 			</p>
 			<p>Эти имена являются допустимыми:</p>
 
 			<CodeJs
-				js={` let $ = 1; // объявили переменную с именем "$"
- let _ = 2; // а теперь переменную с именем "_"
+				js={`let $ = 1; // объявили переменную с именем "$"
+let _ = 2; // а теперь переменную с именем "_"
 
- alert($ + _); // 3`}
+alert($ + _); // 3`}
 			/>
 
 			<p>Примеры неправильных имён переменных:</p>
 
 			<CodeNote
-				js={` let 1a; // не может начинаться с цифры
+				js={`let 1a; // не может начинаться с цифры
 
- let my-name; // дефис '-' не разрешён в имени`}
+let my-name; // дефис '-' не разрешён в имени`}
 			/>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.3rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<FaInfoCircle
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#3463ff',
-						}}
-					/>
-					Регистр имеет значение
+			<div className='note-block info-block'>
+				<h1 className='note-block-title'>
+					<FaInfoCircle /> Регистр имеет значение
 				</h1>
 				<p>Переменные с именами apple и APPLE – это две разные переменные.</p>
 			</div>
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.3rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<FaInfoCircle
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#3463ff',
-						}}
-					/>
-					Нелатинские буквы разрешены, но не рекомендуются
+			<div className='note-block info-block'>
+				<h1 className='note-block-title'>
+					<FaInfoCircle /> Нелатинские буквы разрешены, но не рекомендуются
 				</h1>
 				<p>
 					Можно использовать любой язык, включая кириллицу или даже иероглифы,
@@ -465,8 +308,8 @@ export default function Variables() {
 				</p>
 
 				<CodeNote
-					js={` let имя = '...';
- let 我 = '...';`}
+					js={`let имя = '...';
+let 我 = '...';`}
 				/>
 
 				<p>
@@ -478,35 +321,12 @@ export default function Variables() {
 				</p>
 			</div>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.2rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<IoIosWarning
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#ff9a34',
-							fontSize: '1.5rem',
-						}}
-					/>
-					Зарезервированные имена
+			<div className='note-block warning-block'>
+				<h1 className='note-block-title'>
+					<IoIosWarning /> Зарезервированные имена
 				</h1>
 				<p>
-					Существует
+					Существует{' '}
 					<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#ключевые_слова'>
 						список зарезервированных слов
 					</a>
@@ -515,107 +335,50 @@ export default function Variables() {
 				</p>
 
 				<p>
-					Например:
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
-					,
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						class
-					</span>
-					,
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						return
-					</span>
-					и
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						function
-					</span>
-					зарезервированы.
+					Например: <Badge bg='secondary'>let</Badge>,{' '}
+					<Badge bg='secondary'>class</Badge>,{' '}
+					<Badge bg='secondary'>return</Badge> и{' '}
+					<Badge bg='secondary'>function</Badge> зарезервированы.
 				</p>
 
 				<p>Приведённый ниже код даёт синтаксическую ошибку:</p>
 
 				<CodeJs
-					js={` let let = 5; // нельзя назвать переменную "let", ошибка!
- let return = 5; 
- // также нельзя назвать переменную "return", ошибка!`}
+					js={`let let = 5; // нельзя назвать переменную "let", ошибка!
+let return = 5; 
+// также нельзя назвать переменную "return", ошибка!`}
 				/>
 			</div>
-			
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.2rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<IoIosWarning
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#ff9a34',
-							fontSize: '1.5rem',
-						}}
-					/>
-					Создание переменной без использования
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						use strict
-					</span>
+
+			<div className='note-block warning-block'>
+				<h1 className='note-block-title'>
+					<IoIosWarning /> Создание переменной без использования{' '}
+					<Badge bg='secondary'>use strict</Badge>
 				</h1>
 				<p>
 					Обычно нам нужно определить переменную перед её использованием. Но в
 					старые времена было технически возможно создать переменную простым
-					присвоением значения без использования
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						let
-					</span>
-					. Это все ещё работает, если мы не включаем
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						use strict
-					</span>
-					в наших файлах, чтобы обеспечить совместимость со старыми скриптами.
+					присвоением значения без использования{' '}
+					<Badge bg='secondary'>let</Badge>. Это все ещё работает, если мы не
+					включаем <Badge bg='secondary'>use strict</Badge> в наших файлах,
+					чтобы обеспечить совместимость со старыми скриптами.
 				</p>
 
 				<CodeJs
-					js={` // заметка: "use strict" в этом примере не используется
+					js={`// заметка: "use strict" в этом примере не используется
 
- num = 5; // если переменная "num" 
- // раньше не существовала, она создаётся
+num = 5; // если переменная "num" 
+// раньше не существовала, она создаётся
 
- alert(num); // 5`}
+alert(num); // 5`}
 				/>
 
 				<p>Это плохая практика, которая приводит к ошибке в строгом режиме:</p>
 
 				<CodeNote
-					js={` "use strict";
+					js={`"use strict";
 
- num = 5; // ошибка: num is not defined`}
+num = 5; // ошибка: num is not defined`}
 				/>
 			</div>
 
@@ -623,39 +386,23 @@ export default function Variables() {
 
 			<p>
 				Чтобы объявить константную, то есть, неизменяемую переменную,
-				используйте
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					const
-				</span>
-				вместо
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let
-				</span>
-				:
+				используйте <Badge bg='secondary'>const</Badge> вместо{' '}
+				<Badge bg='secondary'>let</Badge>:
 			</p>
 
-			<CodeNote js={` const myBirthday = '18.04.1982';`} />
+			<CodeNote js={`const myBirthday = '18.04.1982';`} />
 
 			<p>
-				Переменные, объявленные с помощью
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					const
-				</span>
-				, называются «константами». Их нельзя изменить. Попытка сделать это
+				Переменные, объявленные с помощью <Badge bg='secondary'>const</Badge>,
+				называются «константами». Их нельзя изменить. Попытка сделать это
 				приведёт к ошибке:
 			</p>
 
 			<CodeJs
-				js={` const myBirthday = '18.04.1982';
+				js={`const myBirthday = '18.04.1982';
 
- myBirthday = '01.01.2001'; 
- // ошибка, константу нельзя перезаписать!`}
+myBirthday = '01.01.2001'; 
+// ошибка, константу нельзя перезаписать!`}
 			/>
 
 			<p>
@@ -682,96 +429,29 @@ export default function Variables() {
 
 			<CodeJs
 				js={`const RED = "#ff0000";
- const GREEN = "#00ff00";
- const BLUE = "#0000ff";
- const ORANGE = "#ff8000";
+const GREEN = "#00ff00";
+const BLUE = "#0000ff";
+const ORANGE = "#ff8000";
 
- // ...когда нам нужно выбрать цвет
- let color = BLUE;
- alert(color); // #0000ff`}
+// ...когда нам нужно выбрать цвет
+let color = BLUE;
+alert(color); // #0000ff`}
 			/>
 
 			<p>Преимущества:</p>
 			<ul>
 				<li>
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						BLUE
-					</span>
-					гораздо легче запомнить, чем
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						#0000ff
-					</span>
-					.
+					<Badge bg='secondary'>BLUE</Badge> гораздо легче запомнить, чем{' '}
+					<Badge bg='secondary'>#0000ff</Badge>.
 				</li>
 				<li>
-					Гораздо легче допустить ошибку при вводе
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						#0000ff
-					</span>
-					чем при вводе
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						BLUE
-					</span>
-					.
+					Гораздо легче допустить ошибку при вводе{' '}
+					<Badge bg='secondary'>#0000ff</Badge> чем при вводе{' '}
+					<Badge bg='secondary'>BLUE</Badge>.
 				</li>
 				<li>
-					При чтении кода
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						BLUE
-					</span>
-					намного понятнее, чем
-					<span
-						style={{
-							color: '#0000ff',
-							background: '#ababab',
-							padding: '2px',
-							fontWeight: 'bold',
-							borderRadius: '2px',
-						}}
-					>
-						#0000ff
-					</span>
-					.
+					При чтении кода <Badge bg='secondary'>BLUE</Badge> намного понятнее,
+					чем <Badge bg='secondary'>#0000ff</Badge>.
 				</li>
 			</ul>
 
@@ -791,20 +471,15 @@ export default function Variables() {
 			<p>Например:</p>
 
 			<CodeNote
-				js={` const pageLoadTime = 
- /* время, потраченное на загрузку веб-страницы */;`}
+				js={`const pageLoadTime = 
+/* время, потраченное на загрузку веб-страницы */;`}
 			/>
 
 			<p>
-				Значение
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					pageLoadTime
-				</span>
-				неизвестно до загрузки страницы, поэтому её имя записано обычными, а не
-				прописными буквами. Но это всё ещё константа, потому что она не
-				изменяется после назначения.
+				Значение <Badge bg='secondary'>pageLoadTime</Badge> неизвестно до
+				загрузки страницы, поэтому её имя записано обычными, а не прописными
+				буквами. Но это всё ещё константа, потому что она не изменяется после
+				назначения.
 			</p>
 
 			<p>
@@ -842,87 +517,30 @@ export default function Variables() {
 
 			<ul>
 				<li>
-					Используйте легко читаемые имена, такие как
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						userName
-					</span>
-					или
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						shoppingCart
-					</span>
-					.
+					Используйте легко читаемые имена, такие как{' '}
+					<Badge bg='secondary'>userName</Badge> или{' '}
+					<Badge bg='secondary'>shoppingCart</Badge>.
 				</li>
 				<li>
-					Избегайте использования аббревиатур или коротких имён, таких как
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						a
-					</span>
-					,
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						b
-					</span>
-					,
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						c
-					</span>
-					, за исключением тех случаев, когда вы точно знаете, что так нужно.
+					Избегайте использования аббревиатур или коротких имён, таких как{' '}
+					<Badge bg='secondary'>a</Badge>, <Badge bg='secondary'>b</Badge>,{' '}
+					<Badge bg='secondary'>c</Badge>, за исключением тех случаев, когда вы
+					точно знаете, что так нужно.
 				</li>
 				<li>
 					Делайте имена максимально описательными и лаконичными. Примеры плохих
-					имён:
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						data
-					</span>
-					и
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						value
-					</span>
-					. Такие имена ничего не говорят. Их можно использовать только в том
-					случае, если из контекста кода очевидно, какие данные хранит
-					переменная.
+					имён: <Badge bg='secondary'>data</Badge> и{' '}
+					<Badge bg='secondary'>value</Badge>. Такие имена ничего не говорят. Их
+					можно использовать только в том случае, если из контекста кода
+					очевидно, какие данные хранит переменная.
 				</li>
 				<li>
 					Договоритесь с вашей командой об используемых терминах. Если
 					посетитель сайта называется «user», тогда мы должны называть связанные
-					с ним переменные
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						currentUser
-					</span>
-					или
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						newUser
-					</span>
-					, а не, к примеру,
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						currentVisitor
-					</span>
-					или
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						newManInTown
-					</span>
-					.
+					с ним переменные <Badge bg='secondary'>currentUser</Badge> или{' '}
+					<Badge bg='secondary'>newUser</Badge>, а не, к примеру,{' '}
+					<Badge bg='secondary'>currentVisitor</Badge> или{' '}
+					<Badge bg='secondary'>newManInTown</Badge>.
 				</li>
 			</ul>
 
@@ -932,31 +550,9 @@ export default function Variables() {
 				Действуйте.
 			</p>
 
-			<div
-				style={{
-					border: '5px solid rgb(49, 49, 49)',
-					borderRadius: '10px',
-					margin: '40px 0',
-					padding: '20px',
-				}}
-			>
-				<h1
-					style={{
-						fontSize: '1.3rem',
-						fontFamily: 'monospace',
-						fontWeight: 'bold',
-					}}
-				>
-					
-					<FaInfoCircle
-						style={{
-							position: 'relative',
-							bottom: '2px',
-							margin: '5px',
-							color: '#3463ff',
-						}}
-					/>
-					Повторно использовать или создавать новую переменную?
+			<div className='note-block info-block'>
+				<h1 className='note-block-title'>
+					<FaInfoCircle /> Повторно использовать или создавать новую переменную?
 				</h1>
 				<p>
 					И последняя заметка. Есть ленивые программисты, которые вместо
@@ -983,54 +579,32 @@ export default function Variables() {
 			<h2>Итого</h2>
 
 			<p>
-				Мы можем объявить переменные для хранения данных с помощью ключевых слов
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					var
-				</span>
-				,
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let
-				</span>
-				или
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					const
-				</span>
-				.
+				Мы можем объявить переменные для хранения данных с помощью ключевых слов{' '}
+				<Badge bg='secondary'>var</Badge>, <Badge bg='secondary'>let</Badge>
+				или <Badge bg='secondary'>const</Badge>.
 			</p>
 
 			<ul>
-				<li>	<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let
-				</span> – это современный способ объявления.</li>
-				<li><span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					var
-				</span> – это устаревший способ объявления. Обычно мы вообще не используем его, но мы рассмотрим тонкие отличия от <span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let
-				</span> в главе Устаревшее ключевое слово var на случай, если это всё-таки вам понадобится.</li>
-				<li><span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					const
-				</span> – похоже на <span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					let
-				</span>, но значение переменной не может изменяться.</li>
+				<li>
+					<Badge bg='secondary'>let</Badge> – это современный способ объявления.
+				</li>
+				<li>
+					<Badge bg='secondary'>var</Badge> – это устаревший способ объявления.
+					Обычно мы вообще не используем его, но мы рассмотрим тонкие отличия от{' '}
+					<Badge bg='secondary'>let</Badge> в главе «Устаревшее ключевое слово
+					var» на случай, если это всё-таки вам понадобится.
+				</li>
+				<li>
+					<Badge bg='secondary'>const</Badge> – похоже на{' '}
+					<Badge bg='secondary'>let</Badge>, но значение переменной не может
+					изменяться.
+				</li>
 			</ul>
 
-			<p>Переменные должны быть названы таким образом, чтобы мы могли легко понять, что у них внутри.</p>
+			<p>
+				Переменные должны быть названы таким образом, чтобы мы могли легко
+				понять, что у них внутри.
+			</p>
 		</Container>
 	)
 }

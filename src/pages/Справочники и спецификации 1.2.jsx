@@ -1,47 +1,25 @@
-import { Container } from 'react-bootstrap'
-import ArrowNavigator from '../components/ArrowNavigator'
+import { Badge, Container } from 'react-bootstrap';
+import { FaInfoCircle } from 'react-icons/fa';
+import ArrowNavigator from '../components/ArrowNavigator';
+import CodeNote from '../components/CodeNote';
 
 export default function Reference() {
 	return (
-		<Container className='text-light mt-5'>
+		<Container className='text-light mt-5 mb-5'>
 			<ArrowNavigator />
+			<h1>Справочники и спецификации</h1>
 
-			<h1
-				style={{
-					fontSize: '2rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-				}}
-			>
-				Справочники и спецификации
-			</h1>
 			<p>
-				Эта книга является учебником и нацелена на то, чтобы помочь вам
-				постепенно освоить язык. Но когда вы хорошо изучите основы, вам
-				понадобятся дополнительные источники информации.
+				Эта книга является **учебником** и нацелена на то, чтобы помочь вам
+				постепенно освоить язык. Но когда вы хорошо изучите основы, вам понадобятся
+				дополнительные источники информации.
 			</p>
 
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-					marginTop: '40px',
-				}}
-			>
-				Спецификация
-			</h1>
-
+			<h2>Спецификация</h2>
 			<p>
-				{' '}
-				<a
-					style={{ margin: '0' }}
-					href='https://www.ecma-international.org/publications-and-standards/standards/ecma-262/'
-				>
-					Спецификация ECMA-262{' '}
-				</a>
-				содержит самую глубокую, детальную и формализованную информацию о
-				JavaScript. Она определяет сам язык.
+				Спецификация <Badge bg='secondary'>ECMA-262</Badge> содержит самую
+				глубокую, детальную и формализованную информацию о JavaScript. Она
+				определяет сам язык.
 			</p>
 			<p>
 				Вначале спецификация может показаться тяжеловатой для понимания из-за
@@ -49,56 +27,38 @@ export default function Reference() {
 				достоверной информации, то это правильное место, но она не для
 				ежедневного использования.
 			</p>
-			<p>
-				Новая версия спецификации появляется каждый год. А пока она не вышла
-				официально, все желающие могут ознакомиться с текущим черновиком на
-				https://tc39.es/ecma262/.
-			</p>
+			<p>Новая версия спецификации появляется каждый год. А пока она не вышла
+				официально, все желающие могут ознакомиться с текущим черновиком на:</p>
+			<CodeNote js={`https://tc39.es/ecma262/`} />
 			<p>
 				Чтобы почитать о самых последних возможностях, включая те, которые
-				«почти в стандарте» (так называемые «stage 3 proposals»), посетите
-				https://github.com/tc39/proposals.
+				«почти в стандарте» (так называемые **«stage 3 proposals»**), посетите:
 			</p>
-
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-				}}
-			>
-				Справочники
-			</h1>
-
-			<ul>
-				<li>
-					MDN (Mozilla) JavaScript Reference – это справочник с примерами и
-					другой информацией. Хороший источник для получения подробных сведений
-					о функциях языка, методах встроенных объектов и так далее.
-				</li>
-			</ul>
-
+			<CodeNote js={`https://github.com/tc39/proposals`} />
 			<p>
-				Располагается по адресу
-				https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference.
+				Если вы разрабатываете под браузеры, то существуют и другие спецификации,
+				о которых рассказывается во{' '}
+				<Badge bg='secondary'>второй части</Badge> этого учебника.
 			</p>
 
+			<h2>Справочники</h2>
+			<p>
+				<Badge bg='secondary'>MDN (Mozilla) JavaScript Reference</Badge> – это
+				справочник с примерами и другой информацией. Хороший источник для
+				получения подробных сведений о функциях языка, методах встроенных
+				объектов и так далее.
+			</p>
+			<p>Располагается по адресу:</p>
+			<CodeNote js={`https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference`} />
 			<p>
 				Хотя зачастую вместо их сайта удобнее использовать какой-нибудь
-				интернет-поисковик, вводя там запрос «MDN [что вы хотите найти]»,
-				например https://google.com/search?q=MDN+parseInt для поиска информации
-				о функции parseInt.
+				интернет-поисковик, вводя там запрос{' '}
+				<Badge bg='secondary'>«MDN [что вы хотите найти]»</Badge>, например:
 			</p>
+			<CodeNote js={`https://google.com/search?q=MDN+parseInt`} />
+			<p>для поиска информации о функции <Badge bg='secondary'>parseInt</Badge>.</p>
 
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-				}}
-			>
-				Таблицы совместимости
-			</h1>
+			<h2>Таблицы совместимости</h2>
 			<p>
 				JavaScript – это развивающийся язык, в который постоянно добавляется
 				что-то новое.
@@ -109,27 +69,55 @@ export default function Reference() {
 			</p>
 			<ul>
 				<li>
-					https://caniuse.com – таблицы с информацией о поддержке по каждой
-					возможности языка. Например, чтобы узнать, какие движки поддерживают
-					современные криптографические функции, посетите:
-					https://caniuse.com/#feat=cryptography.
+					<Badge bg='secondary'>https://caniuse.com</Badge> – таблицы с
+					информацией о поддержке по каждой возможности языка. Например, чтобы
+					узнать, какие движки поддерживают современные криптографические
+					функции, посетите:{' '}
+					<CodeNote js={`https://caniuse.com/#feat=cryptography`} />
 				</li>
 				<li>
-					https://kangax.github.io/compat-table – таблица с возможностями языка
-					и движками, которые их поддерживают и не поддерживают.
+					<Badge bg='secondary'>https://kangax.github.io/compat-table</Badge> –
+					таблица с возможностями языка и движками, которые их поддерживают и не
+					поддерживают.
 				</li>
 			</ul>
 
-			<p>
-				Все эти ресурсы полезны в ежедневной работе программиста, так как они
-				содержат ценную информацию о возможностях использования языка, их
-				поддержке и так далее.
-			</p>
-			<p>
-				Пожалуйста, запомните эти ссылки (или ссылку на эту страницу) на случай,
-				когда вам понадобится подробная информация о какой-нибудь конкретной
-				возможности JavaScript.
-			</p>
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.3rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/>
+					Важно
+				</h1>
+				<p>
+					Все эти ресурсы полезны в ежедневной работе программиста, так как они
+					содержат ценную информацию о возможностях использования языка, их
+					поддержке и так далее.
+				</p>
+				<p>
+					Пожалуйста, запомните эти ссылки (или ссылку на эту страницу) на случай,
+					когда вам понадобится подробная информация о какой-нибудь конкретной
+					возможности JavaScript.
+				</p>
+			</div>
 		</Container>
-	)
+	);
 }

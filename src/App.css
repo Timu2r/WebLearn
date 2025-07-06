@@ -53,108 +53,109 @@ body {
 	min-height: 100vh;
 	overflow-x: hidden;
 	transition: background-color var(--transition), color var(--transition);
+	/* padding: 0 clamp(1rem, 5vw, 2rem); */
 }
 
-.arrow-wrapper {
-	position: fixed;
-	top: 50%;
-	right: 10px;
-	color: var(--text);
-	font-size: 60px;
-	transition: 0.2s all;
-}
-
+/* Навигационные стрелки */
 .arrow-next {
 	position: fixed;
 	top: 50%;
-	right: 10px;
+	right: clamp(10px, 2vw, 20px);
 	color: var(--text);
-	font-size: 2.5rem;
+	font-size: clamp(1.5rem, 4vw, 2.5rem);
 	transition: all var(--transition);
 	cursor: pointer;
 	background: var(--background-hover-arrow);
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
+	width: clamp(40px, 8vw, 50px);
+	height: clamp(40px, 8vw, 50px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 100;
+	transform: translateY(-50%);
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
 }
 
 .arrow-back {
 	position: fixed;
 	top: 50%;
-	left: 10px;
+	left: clamp(10px, 2vw, 20px);
 	color: var(--text);
-	font-size: 2.5rem;
+	font-size: clamp(1.5rem, 4vw, 2.5rem);
 	transition: all var(--transition);
 	cursor: pointer;
 	background: var(--background-hover-arrow);
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
+	width: clamp(40px, 8vw, 50px);
+	height: clamp(40px, 8vw, 50px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 100;
+	transform: translateY(-50%);
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
 }
 
 .arrow-next:hover,
 .arrow-back:hover {
 	color: var(--accent);
-	transform: scale(1.1);
+	transform: translateY(-50%) scale(1.1);
 	background: var(--background-hover);
+	box-shadow: var(--shadow-hover);
 }
 
 .arrow-next:active,
 .arrow-back:active {
-	transform: scale(0.95);
+	transform: translateY(-50%) scale(0.95);
 }
+
 /* Подсказки для стрелок */
 .tooltip-next {
 	position: fixed;
-	right: -35px;
-	top: 59%;
-	transform: translateY(10%) ;
+	right: clamp(60px, 12vw, 75px);
+	top: 50%;
+	transform: translateY(-50%);
 	background: var(--background-hover);
 	color: var(--text);
 	padding: 6px 12px;
 	border-radius: var(--border-radius);
-	font-size: 0.8rem;
+	font-size: clamp(0.7rem, 2vw, 0.8rem);
 	white-space: nowrap;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity var(--transition);
 	box-shadow: var(--shadow);
 	border: 1px solid var(--border);
+	z-index: 99;
 }
 
 .tooltip-back {
 	position: fixed;
-	left: 50px;
-	top: 59%;
-	transform: translateY(10%) ;
+	left: clamp(60px, 12vw, 75px);
+	top: 50%;
+	transform: translateY(-50%);
 	background: var(--background-hover);
 	color: var(--text);
 	padding: 6px 12px;
 	border-radius: var(--border-radius);
-	font-size: 0.8rem;
+	font-size: clamp(0.7rem, 2vw, 0.8rem);
 	white-space: nowrap;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity var(--transition);
 	box-shadow: var(--shadow);
 	border: 1px solid var(--border);
+	z-index: 99;
 }
 
-.arrow-wrapper:hover .tooltip-next {
+.arrow-next:hover .tooltip-next,
+.arrow-back:hover .tooltip-back {
 	opacity: 1;
-	transform: translateY(10%) translateX(0%);
 }
-.arrow-wrapper:hover .tooltip-back {
-	opacity: 1;
-	left: 0;
-	transform: translateY(10%) translateX(0%);
-}
+
 /* Типография */
 h1,
 h2,
@@ -169,7 +170,7 @@ h6 {
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: clamp(1.8rem, 5vw, 2.5rem);
 	margin-bottom: 1.5rem;
 	font-family: var(--font-mono);
 	color: var(--accent);
@@ -178,14 +179,14 @@ h1 {
 }
 
 h2 {
-	font-size: 1.8rem;
+	font-size: clamp(1.4rem, 4vw, 1.8rem);
 	margin-top: 2rem;
 	margin-bottom: 1.2rem;
 	color: var(--accent);
 }
 
 p {
-	font-size: 1.1rem;
+	font-size: clamp(1rem, 2.5vw, 1.1rem);
 	line-height: 1.7;
 	margin-bottom: 1.5rem;
 	color: var(--text);
@@ -203,11 +204,11 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Дополнительные стили для светлой темы */
+/* Карточки */
 .card {
 	background: var(--card-bg);
 	border-radius: var(--border-radius);
-	padding: 1.5rem;
+	padding: clamp(1rem, 3vw, 1.5rem);
 	box-shadow: var(--shadow);
 	margin: 1rem 0;
 	border: 1px solid var(--border);
@@ -219,42 +220,114 @@ a:hover {
 	transform: translateY(-2px);
 }
 
-/* Переключатель темы (опционально) */
+/* Переключатель темы */
 .theme-switcher {
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
+	bottom: clamp(15px, 3vw, 20px);
+	right: clamp(15px, 3vw, 20px);
 	background: var(--card-bg);
 	border: 1px solid var(--border);
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+	width: clamp(36px, 8vw, 40px);
+	height: clamp(36px, 8vw, 40px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	z-index: 100;
 	box-shadow: var(--shadow);
+	transition: var(--transition);
 }
 
 .theme-switcher:hover {
 	transform: scale(1.1);
+	box-shadow: var(--shadow-hover);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Контейнер для основного контента */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 clamp(1rem, 5vw, 2rem);
+}
+
+/* Adaptive breakpoints */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+	body {
+		padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+	}
+
 	.arrow-next,
 	.arrow-back {
-		display: none;
+		width: clamp(45px, 7vw, 50px);
+		height: clamp(45px, 7vw, 50px);
 	}
- 
+
+	.card {
+		padding: clamp(0.8rem, 2.5vw, 1.2rem);
+	}
+}
+
+/* Мобильные устройства (менее 768px) */
+@media (max-width: 768px) {
+	body {
+		padding: 0 1rem;
+		padding-bottom: 80px; /* Добавляем отступ снизу для стрелок */
+	}
+
+	.arrow-next,
+	.arrow-back {
+		width: 45px;
+		height: 45px;
+		font-size: 1.5rem;
+		top: auto;
+		bottom: 70px; /* Размещаем внизу */
+		transform: none;
+	}
+
+	.arrow-next {
+		right: 15px;
+	}
+
+	.arrow-back {
+		left: 15px;
+	}
+
+	.arrow-next:hover,
+	.arrow-back:hover {
+		transform: scale(1.1);
+	}
+
+	.arrow-next:active,
+	.arrow-back:active {
+		transform: scale(0.95);
+	}
+
+	.tooltip-next,
+	.tooltip-back {
+		display: none; /* Скрываем подсказки на мобильных */
+	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
 	}
 
 	h2 {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
+		margin-top: 1.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.card {
+		padding: 1rem;
+		margin: 0.8rem 0;
 	}
 
 	.theme-switcher {
@@ -262,5 +335,166 @@ a:hover {
 		height: 36px;
 		bottom: 15px;
 		right: 15px;
+	}
+}
+
+/* Очень маленькие экраны (менее 480px) */
+@media (max-width: 480px) {
+	body {
+		padding: 0 0.5rem;
+		padding-bottom: 80px; /* Добавляем отступ снизу для стрелок */
+	}
+
+	.arrow-next,
+	.arrow-back {
+		width: 40px;
+		height: 40px;
+		font-size: 1.2rem;
+		top: auto;
+		bottom: 70px; /* Размещаем внизу */
+		transform: none;
+	}
+
+	.arrow-next {
+		right: 10px;
+	}
+
+	.arrow-back {
+		left: 10px;
+	}
+
+	.arrow-next:hover,
+	.arrow-back:hover {
+		transform: scale(1.1);
+	}
+
+	.arrow-next:active,
+	.arrow-back:active {
+		transform: scale(0.95);
+	}
+
+	h1 {
+		font-size: 1.5rem;
+		padding-bottom: 0.3rem;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+		margin-top: 1.2rem;
+	}
+
+	p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	.card {
+		padding: 0.8rem;
+		margin: 0.6rem 0;
+	}
+
+	.theme-switcher {
+		width: 32px;
+		height: 32px;
+		bottom: 12px;
+		right: 12px;
+	}
+}
+
+/* Landscape режим для мобильных устройств */
+@media (max-width: 768px) and (orientation: landscape) {
+	body {
+		padding-bottom: 70px; /* Меньший отступ в landscape */
+	}
+
+	.arrow-next,
+	.arrow-back {
+		width: 40px;
+		height: 40px;
+		font-size: 1.3rem;
+		bottom: 60px; /* Чуть выше в landscape режиме */
+	}
+
+	.theme-switcher {
+		bottom: 15px; /* Поднимаем переключатель темы */
+	}
+}
+
+/* Высокие экраны (portrait) */
+@media (min-height: 800px) {
+	.arrow-next,
+	.arrow-back {
+		top: 45%;
+	}
+}
+
+/* Очень широкие экраны */
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1400px;
+	}
+
+	.arrow-next {
+		right: 2rem;
+	}
+
+	.arrow-back {
+		left: 2rem;
+	}
+
+	.tooltip-next {
+		right: 4rem;
+	}
+
+	.tooltip-back {
+		left: 4rem;
+	}
+}
+
+/* Для устройств с поддержкой touch */
+@media (hover: none) and (pointer: coarse) {
+	.arrow-next:hover,
+	.arrow-back:hover {
+		transform: scale(1.05);
+	}
+
+	/* На мобильных устройствах в портретном режиме */
+	@media (max-width: 768px) and (orientation: portrait) {
+		.arrow-next:hover,
+		.arrow-back:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	/* На мобильных устройствах в landscape режиме */
+	@media (max-width: 768px) and (orientation: landscape) {
+		.arrow-next:hover,
+		.arrow-back:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.card:hover {
+		transform: none;
+	}
+
+	.theme-switcher:hover {
+		transform: scale(1.05);
+	}
+}
+
+/* Анимации только для устройств, которые их поддерживают */
+@media (prefers-reduced-motion: no-preference) {
+	* {
+		transition: all var(--transition);
+	}
+}
+
+/* Для устройств с reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
 	}
 }

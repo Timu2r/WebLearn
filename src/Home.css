@@ -43,7 +43,7 @@ body {
 /* Home Main Styles */
 .home-main {
 	min-height: 100vh;
-	background: var(--primary-bg);
+	background: none;
 }
 
 .content {

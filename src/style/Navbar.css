@@ -11,7 +11,8 @@
   --border-light: rgba(0, 0, 0, 0.1);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   --nav-link-padding: 0.5rem 1.2rem;
-  --burger-menu-bg: rgba(39, 39, 39, 0.59);
+  --burger-menu-bg: rgba(95, 80, 106, 0.632);
+  --burger-button-bg: rgba(61, 46, 64, 0.77);
   --burger-menu-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
@@ -157,7 +158,7 @@
     margin: 0.3rem 0;
     padding: 0.8rem 1rem !important;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(38, 42, 56, 0.782);
     border: 1px solid rgba(255, 255, 255, 0.06);
     transition: var(--transition);
   }

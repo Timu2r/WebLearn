@@ -1,109 +1,60 @@
-import { Container } from 'react-bootstrap'
+import { Badge, Container } from 'react-bootstrap'
+import { FaInfoCircle } from 'react-icons/fa'
 import ArrowNavigator from '../components/ArrowNavigator'
 
 export default function Editor() {
 	return (
-		<Container className='text-light mt-5'>
+		<Container className='text-light mt-5 mb-5'>
 			<ArrowNavigator />
-
-			<h1
-				style={{
-					fontSize: '2rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-				}}
-			>
-				Редакторы кода
-			</h1>
-
+			<h1>Редакторы кода</h1>
 			<p>
 				Большую часть своего рабочего времени программисты проводят в редакторах
 				кода.
 			</p>
 			<p>
-				Есть два основных типа редакторов: IDE и «лёгкие» редакторы. Многие
-				используют по одному инструменту каждого типа.
+				Есть два основных типа редакторов: **IDE** и **«лёгкие» редакторы**.
+				Многие используют по одному инструменту каждого типа.
 			</p>
-
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-					marginTop: '40px',
-				}}
-			>
-				IDE
-			</h1>
-
+			<h2>IDE</h2>
 			<p>
-				Термином{' '}
-				<a
-					style={{ margin: '0' }}
-					href='https://ru.wikipedia.org/wiki/Integrated_development_environment'
-				>
-					IDE
-				</a>{' '}
-				(Integrated Development Environment, «интегрированная среда разработки»)
-				называют мощные редакторы с множеством функций, которые работают в
-				рамках целого проекта. Как видно из названия, это не просто редактор, а
-				нечто большее.
+				Термином <Badge bg='secondary'>IDE</Badge> (Integrated Development
+				Environment, «интегрированная среда разработки») называют мощные
+				редакторы с множеством функций, которые работают в рамках целого
+				проекта. Как видно из названия, это не просто редактор, а нечто большее.
 			</p>
 			<p>
 				IDE загружает проект (который может состоять из множества файлов),
 				позволяет переключаться между файлами, предлагает автодополнение по коду
 				всего проекта (а не только открытого файла), также она интегрирована с
 				системой контроля версий (например, такой как{' '}
-				<a style={{ margin: '0' }} href='https://git-scm.com/'>
-					git
-				</a>{' '}
-				), средой для тестирования и другими инструментами на уровне всего
-				проекта.
+				<Badge bg='secondary'>git</Badge>), средой для тестирования и другими
+				инструментами на уровне всего проекта.
 			</p>
 			<p>Если вы ещё не выбрали себе IDE, присмотритесь к этим:</p>
 			<ul>
 				<li>
-					{' '}
-					<a style={{ margin: '0' }} href='https://code.visualstudio.com/'>
-						Visual Studio Code
-					</a>{' '}
-					(кросс-платформенная, бесплатная).
+					<Badge bg='secondary'>Visual Studio Code</Badge> (кросс-платформенная,
+					бесплатная).
 				</li>
 				<li>
-					{' '}
-					<a style={{ margin: '0' }} href='https://www.jetbrains.com/webstorm/'>
-						WebStorm
-					</a>{' '}
-					(кросс-платформенная, бесплатная для некоммерческого использования).
+					<Badge bg='secondary'>WebStorm</Badge> (кросс-платформенная,
+					бесплатная для некоммерческого использования).
 				</li>
 			</ul>
-
 			<p>
-				Для Windows есть ещё Visual Studio (не путать с Visual Studio Code).
-				Visual Studio – это платная мощная среда разработки, которая работает
-				только на Windows. Она хорошо подходит для .NET платформы. У неё есть
-				бесплатная версия, которая называется{' '}
-				<a href='https://www.visualstudio.com/vs/community/'>
-					Visual Studio Community.
-				</a>{' '}
+				Для Windows есть ещё <Badge bg='secondary'>Visual Studio</Badge> (не
+				путать с Visual Studio Code). Visual Studio – это платная мощная среда
+				разработки, которая работает только на Windows. Она хорошо подходит для
+				.NET платформы. У неё есть бесплатная версия, которая называется{' '}
+				<Badge bg='secondary'>Visual Studio Community</Badge>.
 			</p>
 			<p>
 				Многие IDE платные, но у них есть пробный период. Их цена обычно
 				незначительна по сравнению с зарплатой квалифицированного разработчика,
 				так что пробуйте и выбирайте ту, что вам подходит лучше других.
 			</p>
-
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-					marginTop: '20px',
-				}}
-			>
-				«Лёгкие» редакторы
-			</h1>
-
+			---
+			<h2>«Лёгкие» редакторы</h2>
 			<p>
 				«Лёгкие» редакторы менее мощные, чем IDE, но они отличаются скоростью,
 				удобным интерфейсом и простотой.
@@ -125,37 +76,22 @@ export default function Editor() {
 				границы между IDE и «лёгкими» редакторами размыты.
 			</p>
 			<p>Следующие варианты заслуживают вашего внимания:</p>
-
 			<ul>
 				<li>
-					{' '}
-					<a href='https://www.sublimetext.com/'>Sublime Text </a>{' '}
-					(кроссплатформенный, условно-бесплатный).
+					<Badge bg='secondary'>Sublime Text</Badge> (кроссплатформенный,
+					условно-бесплатный).
 				</li>
 				<li>
-					{' '}
-					<a href='https://notepad-plus-plus.org/'>Notepad++</a> (Windows,
-					бесплатный).
+					<Badge bg='secondary'>Notepad++</Badge> (Windows, бесплатный).
 				</li>
 				<li>
-					{' '}
-					<a href='https://www.vim.org/'>Vim</a> и{' '}
-					<a href='https://www.gnu.org/software/emacs/'>Emacs</a> тоже хороши,
-					если знать, как ими пользоваться.
+					<Badge bg='secondary'>Vim</Badge> и{' '}
+					<Badge bg='secondary'>Emacs</Badge> тоже хороши, если знать, как ими
+					пользоваться.
 				</li>
 			</ul>
-
-			<h1
-				style={{
-					fontSize: '1.7rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-					marginTop: '20px',
-				}}
-			>
-				Не будем ссориться
-			</h1>
-
+			---
+			<h2>Не будем ссориться</h2>
 			<p>
 				Редакторы, перечисленные выше, известны автору давно и заслужили много
 				хороших отзывов от коллег.

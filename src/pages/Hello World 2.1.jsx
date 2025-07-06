@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap'
+import { Badge, Container } from 'react-bootstrap'
 import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
@@ -7,19 +7,17 @@ import CodeNote from '../components/CodeNote'
 
 export default function HelloWorld() {
 	const htmlExample1 = ` <!DOCTYPE HTML>
-  <html>
-    <body>
-      <p> Перед скриптом ...</p>
-      <script>
-        alert('Привет, мир!');
-      </script>
-      <p>...После скрипта.</p>
-    </body>
-  </html>
+<html>
+  <body>
+    <p> Перед скриптом ...</p>
+    <script>
+      alert('Привет, мир!');
+    </script>
+    <p>...После скрипта.</p>
+  </body>
+</html>
 `
-	const htmlExample2 = `<script type="text/javascript"><!--
-    ...
-//--></script>
+	const htmlExample2 = `<script type="text/javascript"></script>
 `
 
 	const htmlExample3 = `<script src="/path/to/script.js"></script>`
@@ -36,130 +34,100 @@ export default function HelloWorld() {
 </script>`
 
 	return (
-		<Container className='text-light mt-5'>
+		<Container className='text-light mt-5 mb-5'>
 			<ArrowNavigator />
-			<h1
-				style={{
-					fontSize: '2rem',
-					fontFamily: 'monospace',
-					fontWeight: 'bold',
-				}}
-			>
-				Привет, мир!
-			</h1>
-			<p>В этой части учебника мы изучаем собственно JavaScript, сам язык.</p>
+			<h1>Привет, мир!</h1>
 			<p>
-				Но нам нужна рабочая среда для запуска наших скриптов, и, поскольку это
-				онлайн-книга, то браузер будет хорошим выбором. В этой главе мы сократим
-				количество специфичных для браузера команд (например, alert) до
-				минимума, чтобы вы не тратили на них время, если планируете
-				сосредоточиться на другой среде (например, Node.js). А на использовании
-				JavaScript в браузере мы сосредоточимся в следующей части учебника.
+				В этой части учебника мы изучаем собственно **JavaScript**, сам язык.
 			</p>
 			<p>
-				Итак, сначала давайте посмотрим, как выполнить скрипт на странице. Для
-				серверных сред (например, Node.js), вы можете выполнить скрипт с помощью
-				команды типа node my.js. Для браузера всё немного иначе.
+				Но нам нужна рабочая среда для запуска наших скриптов, и, поскольку
+				это онлайн-книга, то браузер будет хорошим выбором. В этой главе мы
+				сократим количество специфичных для браузера команд (например,{' '}
+				<Badge bg='secondary'>alert</Badge>) до минимума, чтобы вы не
+				тратили на них время, если планируете сосредоточиться на другой
+				среде (например, <Badge bg='secondary'>Node.js</Badge>). А на
+				использовании JavaScript в браузере мы сосредоточимся в следующей
+				части учебника.
 			</p>
-			<h2>Тег «script»</h2>
+			<p>
+				Итак, сначала давайте посмотрим, как выполнить скрипт на странице.
+				Для серверных сред (например, <Badge bg='secondary'>Node.js</Badge>
+				), вы можете выполнить скрипт с помощью команды типа{' '}
+				<Badge bg='secondary'>node my.js</Badge>. Для браузера всё немного
+				иначе.
+			</p>
+
+			---
+
+			<h2>Тег <Badge bg='secondary'>&lt;script&gt;</Badge></h2>
 			<p>
 				Программы на JavaScript могут быть вставлены в любое место
 				HTML-документа с помощью тега{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>
-				.
+				<Badge bg='secondary'>&lt;script&gt;</Badge>.
 			</p>
 			<p>Для примера:</p>
 			<CodeRunner html={htmlExample1} />
 			<p className='mt-4'>
-				Вы можете запустить пример, нажав на кнопку «Play» в правом верхнем углу
-				блока с кодом выше.
+				Вы можете запустить пример, нажав на кнопку «Play» в правом верхнем
+				углу блока с кодом выше.
 			</p>
 			<p>
-				Тег{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>{' '}
-				содержит JavaScript-код, который автоматически выполнится, когда браузер
-				его обработает.
+				Тег <Badge bg='secondary'>&lt;script&gt;</Badge> содержит
+				JavaScript-код, который автоматически выполнится, когда браузер его
+				обработает.
 			</p>
+
+			---
+
 			<h2>Современная разметка</h2>
 			<p>
-				Тег{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>{' '}
-				имеет несколько атрибутов, которые редко используются, но всё ещё могут
-				встретиться в старом коде:
+				Тег <Badge bg='secondary'>&lt;script&gt;</Badge> имеет несколько
+				атрибутов, которые редко используются, но всё ещё могут встретиться
+				в старом коде:
 			</p>
 			<p>
-				<span style={{ fontWeight: 'bold' }}>Атрибут </span>type:{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script type=&quot;...&quot;&gt;
-				</span>
+				**Атрибут** <Badge bg='secondary'>type</Badge>:{' '}
+				<Badge bg='secondary'>&lt;script type="..."&gt;</Badge>
 			</p>
 			<p>
 				Старый стандарт HTML, HTML4, требовал наличия этого атрибута в теге{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>
-				. Обычно он имел значение{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					type=&quot;text/javascript&quot;
-				</span>
-				. На текущий момент этого больше не требуется. Более того, в современном
-				стандарте HTML смысл этого атрибута полностью изменился. Теперь он может
-				использоваться для JavaScript-модулей. Но это тема не для начального
-				уровня, и о ней мы поговорим в другой части учебника.
+				<Badge bg='secondary'>&lt;script&gt;</Badge>. Обычно он имел
+				значение <Badge bg='secondary'>type="text/javascript"</Badge>. На
+				текущий момент этого больше не требуется. Более того, в современном
+				стандарте HTML смысл этого атрибута полностью изменился. Теперь он
+				может использоваться для JavaScript-модулей. Но это тема не для
+				начального уровня, и о ней мы поговорим в другой части учебника.
 			</p>
-			<span style={{ fontWeight: 'bold' }}>Атрибут </span>language:{' '}
-			<span style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}>
-				&lt;script language=...&gt;
-			</span>
 			<p>
-				Этот атрибут должен был задавать язык, на котором написан скрипт. Но так
-				как JavaScript является языком по умолчанию, в этом атрибуте уже нет
-				необходимости.
+				**Атрибут** <Badge bg='secondary'>language</Badge>:{' '}
+				<Badge bg='secondary'>&lt;script language=...&gt;</Badge>
 			</p>
-			<p style={{ fontWeight: 'bold' }}>
-				Обёртывание скрипта в HTML-комментарии.{' '}
+			<p>
+				Этот атрибут должен был задавать язык, на котором написан скрипт. Но
+				так как JavaScript является языком по умолчанию, в этом атрибуте уже
+				нет необходимости.
+			</p>
+			<p>
+				**Обёртывание скрипта в HTML-комментарии.**
 			</p>
 			<p>
 				В очень древних книгах и руководствах вы сможете найти комментарии
-				внутри тега{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>
-				, например, такие:
+				внутри тега <Badge bg='secondary'>&lt;script&gt;</Badge>, например,
+				такие:
 			</p>
 			<CodeNote html={htmlExample2} />
 			<p className='mt-4'>
-				Этот комментарий скрывал код JavaScript в старых браузерах, которые не
-				знали, как обрабатывать тег{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&lt;script&gt;
-				</span>
-				. Поскольку все браузеры, выпущенные за последние 15 лет, не содержат
-				данной проблемы, такие комментарии уже не нужны. Если они есть, то это
+				Этот комментарий скрывал код JavaScript в старых браузерах, которые
+				не знали, как обрабатывать тег{' '}
+				<Badge bg='secondary'>&lt;script&gt;</Badge>. Поскольку все
+				браузеры, выпущенные за последние 15 лет, не содержат данной
+				проблемы, такие комментарии уже не нужны. Если они есть, то это
 				признак, что перед нами очень древний код.
 			</p>
+
+			---
+
 			<h2>Внешние скрипты</h2>
 			<p>
 				Если у вас много JavaScript-кода, вы можете поместить его в отдельный
@@ -167,43 +135,19 @@ export default function HelloWorld() {
 			</p>
 			<p>
 				Файл скрипта можно подключить к HTML с помощью атрибута{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					src
-				</span>
-				:
+				<Badge bg='secondary'>src</Badge>:
 			</p>
 			<CodeNote html={htmlExample3} />
 			<p className='mt-4'>
-				Здесь{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					/path/to/script
-				</span>{' '}
-				.js – это абсолютный путь от корневой папки до необходимого файла.
-				Корневой папкой может быть корень диска или корень сайта, в зависимости
-				от условий работы сайта. Также можно указать относительный путь от
+				Здесь <Badge bg='secondary'>/path/to/script.js</Badge> – это
+				абсолютный путь от корневой папки до необходимого файла. Корневой
+				папкой может быть корень диска или корень сайта, в зависимости от
+				условий работы сайта. Также можно указать относительный путь от
 				текущей страницы. Например,{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					src=&quot;script.js&quot;
-				</span>{' '}
-				или{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					src=&quot;./script.js&quot;
-				</span>{' '}
-				будет означать, что файл{' '}
-				<span
-					style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-				>
-					&quot;script.js&quot;
-				</span>{' '}
-				находится в текущей папке.
+				<Badge bg='secondary'>src="script.js"</Badge> или{' '}
+				<Badge bg='secondary'>src="./script.js"</Badge> будет означать, что
+				файл <Badge bg='secondary'>"script.js"</Badge> находится в текущей
+				папке.
 			</p>
 			<p>Можно указать и полный URL-адрес. Например:</p>
 			<CodeNote html={htmlExample4} />
@@ -211,6 +155,7 @@ export default function HelloWorld() {
 				Для подключения нескольких скриптов используйте несколько тегов:
 			</p>
 			<CodeNote html={htmlExample5} />
+
 			<div
 				style={{
 					border: '5px solid rgb(49, 49, 49)',
@@ -226,7 +171,6 @@ export default function HelloWorld() {
 						fontWeight: 'bold',
 					}}
 				>
-					{' '}
 					<FaInfoCircle
 						style={{
 							position: 'relative',
@@ -242,22 +186,23 @@ export default function HelloWorld() {
 					сложные выделяются в отдельные файлы.
 				</p>
 				<p style={{ margin: '0' }}>
-					Польза отдельных файлов в том, что браузер загрузит скрипт отдельно и
-					сможет хранить его в{' '}
+					Польза отдельных файлов в том, что браузер загрузит скрипт отдельно
+					и сможет хранить его в{' '}
 					<a
 						style={{ margin: '0' }}
 						href='https://en.wikipedia.org/wiki/Web_cache'
 					>
 						кеше.
-					</a>{' '}
+					</a>
 				</p>
 				<p>
-					Другие страницы, которые подключают тот же скрипт, смогут брать его из
-					кеша вместо повторной загрузки из сети. И таким образом файл будет
-					загружаться с сервера только один раз.
+					Другие страницы, которые подключают тот же скрипт, смогут брать его
+					из кеша вместо повторной загрузки из сети. И таким образом файл
+					будет загружаться с сервера только один раз.
 				</p>
 				<p>Это сокращает расход трафика и ускоряет загрузку страниц.</p>
 			</div>
+
 			<div
 				style={{
 					border: '5px solid rgb(49, 49, 49)',
@@ -273,7 +218,6 @@ export default function HelloWorld() {
 						fontWeight: 'bold',
 					}}
 				>
-					{' '}
 					<IoIosWarning
 						style={{
 							position: 'relative',
@@ -283,34 +227,14 @@ export default function HelloWorld() {
 							fontSize: '1.5rem',
 						}}
 					/>
-					Если атрибут{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						src
-					</span>{' '}
-					установлен, содержимое тега{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						script
-					</span>{' '}
-					будет игнорироваться.
+					Если атрибут <Badge bg='secondary'>src</Badge> установлен,
+					содержимое тега <Badge bg='secondary'>script</Badge> будет
+					игнорироваться.
 				</h1>
 				<p>
-					В одном теге{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						&lt;script&gt;
-					</span>{' '}
-					нельзя использовать одновременно атрибут{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						src
-					</span>{' '}
-					и код внутри.
+					В одном теге <Badge bg='secondary'>&lt;script&gt;</Badge> нельзя
+					использовать одновременно атрибут{' '}
+					<Badge bg='secondary'>src</Badge> и код внутри.
 				</p>
 				<p style={{ margin: '0' }}>Нижеприведённый пример не работает:</p>
 
@@ -318,67 +242,45 @@ export default function HelloWorld() {
 
 				<p className='mt-4'>
 					Нужно выбрать: либо внешний скрипт{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						&lt;script type=&quot;...&quot;&gt;
-					</span>
-					, либо обычный код внутри тега{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						&lt;script&gt;
-					</span>
-					.
+					<Badge bg='secondary'>&lt;script type="..."&gt;</Badge>, либо
+					обычный код внутри тега{' '}
+					<Badge bg='secondary'>&lt;script&gt;</Badge>.
 				</p>
 
 				<p>Вышеприведённый пример можно разделить на два скрипта:</p>
 
 				<CodeNote html={htmlExample7} />
 			</div>
+
+			---
+
 			<h2>Итого</h2>
 			<ul>
 				<li>
 					Для добавления кода JavaScript на страницу используется тег{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						&lt;script&gt;
-					</span>
+					<Badge bg='secondary'>&lt;script&gt;</Badge>.
 				</li>
 				<li>
-					Атрибуты{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						type
-					</span>{' '}
-					и{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						language
-					</span>{' '}
-					необязательны.
+					Атрибуты <Badge bg='secondary'>type</Badge> и{' '}
+					<Badge bg='secondary'>language</Badge> необязательны.
 				</li>
 				<li>
 					Скрипт во внешнем файле можно вставить с помощью{' '}
-					<span
-						style={{ background: '#333', padding: '2px', fontWeight: 'bold' }}
-					>
-						&lt;script src=&quot;path/to/script.js&quot;&gt;&lt;/script&gt;
-					</span>
+					<Badge bg='secondary'>
+						&lt;script src="path/to/script.js"&gt;&lt;/script&gt;
+					</Badge>
 					.
 				</li>
 			</ul>
 			<p>
 				Нам ещё многое предстоит изучить про браузерные скрипты и их
 				взаимодействие со страницей. Но, как уже было сказано, эта часть
-				учебника посвящена именно языку JavaScript, поэтому здесь мы постараемся
-				не отвлекаться на детали реализации в браузере. Мы воспользуемся
-				браузером для запуска JavaScript, это удобно для онлайн-демонстраций, но
-				это только одна из платформ, на которых работает этот язык.
+				учебника посвящена именно языку JavaScript, поэтому здесь мы
+				постараемся не отвлекаться на детали реализации в браузере. Мы
+				воспользуемся браузером для запуска JavaScript, это удобно для
+				онлайн-демонстраций, но это только одна из платформ, на которых
+				работает этот язык.
 			</p>
 		</Container>
 	)
-} 
+}

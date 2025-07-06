@@ -1,4 +1,4 @@
-import { Badge, Container } from 'react-bootstrap'
+import { Badge, Container, Table  } from 'react-bootstrap'
 import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
 import ArrowNavigator from '../components/ArrowNavigator'
@@ -257,135 +257,65 @@ alert( +apples + +oranges ); // 5
 				соответствующих бинарных):
 			</p>
 
-			<div
-				style={{
-					border: '2px solid rgb(108, 117, 125)',
-					borderRadius: '8px',
-					margin: '20px 0',
-					padding: '20px',
-					backgroundColor: 'rgba(108, 117, 125, 0.1)',
-				}}
-			>
-				<table style={{ width: '100%', borderCollapse: 'collapse' }}>
-					<thead>
-						<tr>
-							<th
-								style={{
-									padding: '10px',
-									borderBottom: '1px solid #6c757d',
-									textAlign: 'left',
-								}}
-							>
-								Приоритет
-							</th>
-							<th
-								style={{
-									padding: '10px',
-									borderBottom: '1px solid #6c757d',
-									textAlign: 'left',
-								}}
-							>
-								Название
-							</th>
-							<th
-								style={{
-									padding: '10px',
-									borderBottom: '1px solid #6c757d',
-									textAlign: 'left',
-								}}
-							>
-								Обозначение
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								15
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								унарный плюс
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>+</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								15
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								унарный минус
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>-</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								14
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								возведение в степень
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>**</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								13
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								умножение
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>*</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								13
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								деление
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>/</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								12
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								сложение
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>+</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								12
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								вычитание
-							</td>
-							<td style={{ padding: '8px', borderBottom: '1px solid #495057' }}>
-								<Badge bg='secondary'>-</Badge>
-							</td>
-						</tr>
-						<tr>
-							<td style={{ padding: '8px' }}>2</td>
-							<td style={{ padding: '8px' }}>присваивание</td>
-							<td style={{ padding: '8px' }}>
-								<Badge bg='secondary'>=</Badge>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			      <div className="table-responsive">
+        <Table striped bordered hover variant="dark" style={{ minWidth: '500px' }}> {/* Добавьте minWidth, если содержимое очень узкое */}
+          <thead>
+            <tr>
+              <th style={{ padding: '10px', textAlign: 'left' }}>
+                Приоритет
+              </th>
+              <th style={{ padding: '10px', textAlign: 'left' }}>
+                Название
+              </th>
+              <th style={{ padding: '10px', textAlign: 'left' }}>
+                Обозначение
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={{ padding: '8px' }}>15</td>
+              <td style={{ padding: '8px' }}>унарный плюс</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>+</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>15</td>
+              <td style={{ padding: '8px' }}>унарный минус</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>-</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>14</td>
+              <td style={{ padding: '8px' }}>возведение в степень</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>**</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>13</td>
+              <td style={{ padding: '8px' }}>умножение</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>*</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>13</td>
+              <td style={{ padding: '8px' }}>деление</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>/</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>12</td>
+              <td style={{ padding: '8px' }}>сложение</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>+</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>12</td>
+              <td style={{ padding: '8px' }}>вычитание</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>-</Badge></td>
+            </tr>
+            <tr>
+              <td style={{ padding: '8px' }}>2</td>
+              <td style={{ padding: '8px' }}>присваивание</td>
+              <td style={{ padding: '8px' }}><Badge bg='secondary'>=</Badge></td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
 
 			<p>
 				Так как «унарный плюс» имеет приоритет 15, который выше, чем 12 у
