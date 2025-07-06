@@ -38,7 +38,7 @@ export default function HelloWorld() {
 			<ArrowNavigator />
 			<h1>Привет, мир!</h1>
 			<p>
-				В этой части учебника мы изучаем собственно **JavaScript**, сам язык.
+				В этой части учебника мы изучаем собственно JavaScript, сам язык.
 			</p>
 			<p>
 				Но нам нужна рабочая среда для запуска наших скриптов, и, поскольку
@@ -58,7 +58,7 @@ export default function HelloWorld() {
 				иначе.
 			</p>
 
-			---
+			
 
 			<h2>Тег <Badge bg='secondary'>&lt;script&gt;</Badge></h2>
 			<p>
@@ -78,7 +78,7 @@ export default function HelloWorld() {
 				обработает.
 			</p>
 
-			---
+			
 
 			<h2>Современная разметка</h2>
 			<p>
@@ -87,7 +87,7 @@ export default function HelloWorld() {
 				в старом коде:
 			</p>
 			<p>
-				**Атрибут** <Badge bg='secondary'>type</Badge>:{' '}
+				Атрибут <Badge bg='secondary'>type</Badge>:{' '}
 				<Badge bg='secondary'>&lt;script type="..."&gt;</Badge>
 			</p>
 			<p>
@@ -100,7 +100,7 @@ export default function HelloWorld() {
 				начального уровня, и о ней мы поговорим в другой части учебника.
 			</p>
 			<p>
-				**Атрибут** <Badge bg='secondary'>language</Badge>:{' '}
+				Атрибут <Badge bg='secondary'>language</Badge>:{' '}
 				<Badge bg='secondary'>&lt;script language=...&gt;</Badge>
 			</p>
 			<p>
@@ -109,7 +109,7 @@ export default function HelloWorld() {
 				нет необходимости.
 			</p>
 			<p>
-				**Обёртывание скрипта в HTML-комментарии.**
+				Обёртывание скрипта в HTML-комментарии.
 			</p>
 			<p>
 				В очень древних книгах и руководствах вы сможете найти комментарии
@@ -126,7 +126,7 @@ export default function HelloWorld() {
 				признак, что перед нами очень древний код.
 			</p>
 
-			---
+			
 
 			<h2>Внешние скрипты</h2>
 			<p>
@@ -252,7 +252,7 @@ export default function HelloWorld() {
 				<CodeNote html={htmlExample7} />
 			</div>
 
-			---
+			
 
 			<h2>Итого</h2>
 			<ul>

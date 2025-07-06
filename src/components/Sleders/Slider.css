@@ -5,8 +5,9 @@
   --secondary-color: #00E5FF;     /* Бирюзовый */
   
   /* Темная тема */
-  --card-bg-dark: #363636;       /* Темный сине-серый */
-  --card-bg-dark-hover: #4d4d4d; /* Более светлый оттенок */
+  --card-bg-dark: linear-gradient(132deg,rgba(38, 54, 64, 0.338) 0%, rgba(42, 47, 105, 0.352) 50%, rgba(28, 16, 61, 0.302) 100%);       /* Темный сине-серый */
+  --card-bg: linear-gradient(132deg,rgba(38, 54, 64, 0.5) 0%, rgb(42, 47, 105, 0.5) 50%, rgb(28, 16, 61, 0.5) 100%);       /* Светлый сине-серый */
+  --card-bg-dark-hover: #4d4d4d00; /* Более светлый оттенок */
   --text-dark: #ECEFF1;          /* Светло-серый */
   
   /* Светлая тема */
@@ -68,7 +69,6 @@
 .custom-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-hover);
-  background: var(--card-bg-dark-hover);
 }
 
 .custom-card::after {
@@ -78,9 +78,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, 
-    rgba(136, 92, 255, 0.227) 0%, 
-    rgba(32, 37, 110, 0.201) 100%);
+  background: var(--card-bg-dark);
   opacity: 0;
   transition: var(--transition);
   z-index: 0;

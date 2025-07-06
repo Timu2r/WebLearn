@@ -126,9 +126,30 @@ let message = 'Hello';`}
 				личного вкуса и эстетики.
 			</p>
 
-			<div className='note-block info-block'>
-				<h1 className='note-block-title'>
-					<FaInfoCircle /> <Badge bg='secondary'>var</Badge> вместо{' '}
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/>{' '}
+					<Badge bg='secondary'>var</Badge> вместо{' '}
 					<Badge bg='secondary'>let</Badge>
 				</h1>
 				<p>
@@ -193,9 +214,30 @@ alert(hello); // Hello world!
 alert(message); // Hello world!`}
 			/>
 
-			<div className='note-block warning-block'>
-				<h1 className='note-block-title'>
-					<IoIosWarning /> Повторное объявление вызывает ошибку
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<IoIosWarning
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#ff9a34',
+							fontSize: '1.5rem',
+						}}
+					/> Повторное объявление вызывает ошибку
 				</h1>
 
 				<p>Переменная может быть объявлена только один раз.</p>
@@ -215,9 +257,30 @@ let message = "Другое";
 				</p>
 			</div>
 
-			<div className='note-block info-block'>
-				<h1 className='note-block-title'>
-					<FaInfoCircle /> Функциональные языки программирования
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/>{' '}
+					Функциональные языки программирования
 				</h1>
 				<p>
 					Примечательно, что существуют{' '}
@@ -292,15 +355,57 @@ alert($ + _); // 3`}
 let my-name; // дефис '-' не разрешён в имени`}
 			/>
 
-			<div className='note-block info-block'>
-				<h1 className='note-block-title'>
-					<FaInfoCircle /> Регистр имеет значение
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/>{' '}
+					Регистр имеет значение
 				</h1>
 				<p>Переменные с именами apple и APPLE – это две разные переменные.</p>
 			</div>
-			<div className='note-block info-block'>
-				<h1 className='note-block-title'>
-					<FaInfoCircle /> Нелатинские буквы разрешены, но не рекомендуются
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/>{' '}
+					Нелатинские буквы разрешены, но не рекомендуются
 				</h1>
 				<p>
 					Можно использовать любой язык, включая кириллицу или даже иероглифы,
@@ -321,9 +426,30 @@ let 我 = '...';`}
 				</p>
 			</div>
 
-			<div className='note-block warning-block'>
-				<h1 className='note-block-title'>
-					<IoIosWarning /> Зарезервированные имена
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<IoIosWarning
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#ff9a34',
+							fontSize: '1.5rem',
+						}}
+					/> Зарезервированные имена
 				</h1>
 				<p>
 					Существует{' '}
@@ -350,9 +476,30 @@ let return = 5;
 				/>
 			</div>
 
-			<div className='note-block warning-block'>
-				<h1 className='note-block-title'>
-					<IoIosWarning /> Создание переменной без использования{' '}
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<IoIosWarning
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#ff9a34',
+							fontSize: '1.5rem',
+						}}
+					/> Создание переменной без использования{' '}
 					<Badge bg='secondary'>use strict</Badge>
 				</h1>
 				<p>
@@ -550,9 +697,29 @@ alert(color); // #0000ff`}
 				Действуйте.
 			</p>
 
-			<div className='note-block info-block'>
-				<h1 className='note-block-title'>
-					<FaInfoCircle /> Повторно использовать или создавать новую переменную?
+			<div
+				style={{
+					border: '5px solid rgb(49, 49, 49)',
+					borderRadius: '10px',
+					margin: '40px 0',
+					padding: '20px',
+				}}
+			>
+				<h1
+					style={{
+						fontSize: '1.2rem',
+						fontFamily: 'monospace',
+						fontWeight: 'bold',
+					}}
+				>
+					<FaInfoCircle
+						style={{
+							position: 'relative',
+							bottom: '2px',
+							margin: '5px',
+							color: '#3463ff',
+						}}
+					/> Повторно использовать или создавать новую переменную?
 				</h1>
 				<p>
 					И последняя заметка. Есть ленивые программисты, которые вместо

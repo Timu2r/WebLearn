@@ -1,7 +1,7 @@
-import { Badge, Container } from 'react-bootstrap';
-import { FaInfoCircle } from 'react-icons/fa';
-import ArrowNavigator from '../components/ArrowNavigator';
-import CodeNote from '../components/CodeNote';
+import { Badge, Container } from 'react-bootstrap'
+import { FaInfoCircle } from 'react-icons/fa'
+import ArrowNavigator from '../components/ArrowNavigator'
+import CodeNote from '../components/CodeNote'
 
 export default function Reference() {
 	return (
@@ -10,9 +10,9 @@ export default function Reference() {
 			<h1>Справочники и спецификации</h1>
 
 			<p>
-				Эта книга является **учебником** и нацелена на то, чтобы помочь вам
-				постепенно освоить язык. Но когда вы хорошо изучите основы, вам понадобятся
-				дополнительные источники информации.
+				Эта книга является учебником и нацелена на то, чтобы помочь вам
+				постепенно освоить язык. Но когда вы хорошо изучите основы, вам
+				понадобятся дополнительные источники информации.
 			</p>
 
 			<h2>Спецификация</h2>
@@ -27,17 +27,19 @@ export default function Reference() {
 				достоверной информации, то это правильное место, но она не для
 				ежедневного использования.
 			</p>
-			<p>Новая версия спецификации появляется каждый год. А пока она не вышла
-				официально, все желающие могут ознакомиться с текущим черновиком на:</p>
+			<p>
+				Новая версия спецификации появляется каждый год. А пока она не вышла
+				официально, все желающие могут ознакомиться с текущим черновиком на:
+			</p>
 			<CodeNote js={`https://tc39.es/ecma262/`} />
 			<p>
 				Чтобы почитать о самых последних возможностях, включая те, которые
-				«почти в стандарте» (так называемые **«stage 3 proposals»**), посетите:
+				«почти в стандарте» (так называемые «stage 3 proposals»), посетите:
 			</p>
 			<CodeNote js={`https://github.com/tc39/proposals`} />
 			<p>
-				Если вы разрабатываете под браузеры, то существуют и другие спецификации,
-				о которых рассказывается во{' '}
+				Если вы разрабатываете под браузеры, то существуют и другие
+				спецификации, о которых рассказывается во{' '}
 				<Badge bg='secondary'>второй части</Badge> этого учебника.
 			</p>
 
@@ -49,14 +51,18 @@ export default function Reference() {
 				объектов и так далее.
 			</p>
 			<p>Располагается по адресу:</p>
-			<CodeNote js={`https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference`} />
+			<CodeNote
+				js={`https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference`}
+			/>
 			<p>
 				Хотя зачастую вместо их сайта удобнее использовать какой-нибудь
 				интернет-поисковик, вводя там запрос{' '}
 				<Badge bg='secondary'>«MDN [что вы хотите найти]»</Badge>, например:
 			</p>
 			<CodeNote js={`https://google.com/search?q=MDN+parseInt`} />
-			<p>для поиска информации о функции <Badge bg='secondary'>parseInt</Badge>.</p>
+			<p>
+				для поиска информации о функции <Badge bg='secondary'>parseInt</Badge>.
+			</p>
 
 			<h2>Таблицы совместимости</h2>
 			<p>
@@ -113,11 +119,11 @@ export default function Reference() {
 					поддержке и так далее.
 				</p>
 				<p>
-					Пожалуйста, запомните эти ссылки (или ссылку на эту страницу) на случай,
-					когда вам понадобится подробная информация о какой-нибудь конкретной
-					возможности JavaScript.
+					Пожалуйста, запомните эти ссылки (или ссылку на эту страницу) на
+					случай, когда вам понадобится подробная информация о какой-нибудь
+					конкретной возможности JavaScript.
 				</p>
 			</div>
 		</Container>
-	);
+	)
 }
