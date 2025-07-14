@@ -1,0 +1,212 @@
+:root {
+  /* Обновленная цветовая схема */
+  --primary-color: #7C4DFF;       /* Яркий фиолетовый */
+  --primary-hover: #651FFF;       /* Более насыщенный фиолетовый */
+  --secondary-color: #00E5FF;     /* Бирюзовый */
+  
+  /* Темная тема */
+  --card-bg-dark: #363636;       /* Темный сине-серый */
+  --card-bg-dark-hover: #4d4d4d; /* Более светлый оттенок */
+  --text-dark: #ECEFF1;          /* Светло-серый */
+  
+  /* Светлая тема */
+  --card-bg-light: #FFFFFF;      /* Чистый белый */
+  --card-bg-light-hover: #F5F5F5;/* Слегка серый */
+  --text-light: #37474F;         /* Темный сине-серый */
+  
+  /* Общие стили */
+  --border-radius: 16px;
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.slider-container {
+  padding: 2.5rem 0;
+}
+
+.theme-section {
+  margin-bottom: 3.5rem;
+}
+
+.theme-title {
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.theme-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.custom-card {
+  background: var(--card-bg-dark);
+  color: var(--text-dark);
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+  position: relative;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+	padding: 0;
+}
+
+.custom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  background: var(--card-bg-dark-hover);
+}
+
+.custom-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(124, 77, 255, 0.1) 0%, 
+    rgba(0, 229, 255, 0.05) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 0;
+}
+
+.custom-card:hover::after {
+  opacity: 1;
+}
+
+.card-body {
+  padding: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.custom-card:hover .card-title::after {
+  width: 100px;
+  background: var(--secondary-color);
+}
+
+.card-description {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 0;
+  color: var(--text-dark);
+  word-wrap: normal;
+}
+
+/* Светлая тема */
+@media (prefers-color-scheme: light) {
+  .theme-title {
+    color: var(--text-light);
+  }
+
+  .custom-card {
+    background: var(--card-bg-light);
+    color: var(--text-light);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .custom-card:hover {
+    background: var(--card-bg-light-hover);
+  }
+
+  .card-title,
+  .card-description {
+    color: var(--text-light);
+  }
+  
+  .custom-card::after {
+    background: linear-gradient(135deg, 
+      rgba(124, 77, 255, 0.05) 0%, 
+      rgba(0, 229, 255, 0.02) 100%);
+  }
+}
+
+/* Анимации */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-col {
+  animation: cardEntrance 0.6s ease-out both;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.05rem;
+  }
+  
+  .card-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slider-container {
+    padding: 1.5rem 0;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .theme-title {
+    font-size: 1.4rem;
+  }
+}

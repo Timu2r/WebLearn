@@ -1,0 +1,66 @@
+.task-viewer .accordion-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.task-viewer .accordion-item:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.task-viewer .accordion-header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.task-viewer .accordion-header button {
+  background-color: transparent;
+  color: var(--text);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  transition: var(--transition);
+}
+
+.task-viewer .accordion-header button:not(.collapsed) {
+  color: var(--accent);
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--accent);
+}
+
+.task-viewer .accordion-body {
+  color: var(--text-secondary);
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.task-viewer .accordion-body p {
+  color: var(--text-secondary);
+}
+
+.task-viewer .btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.task-viewer .btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .task-viewer .accordion-header button {
+    font-size: 1rem;
+  }
+}
