@@ -65,6 +65,7 @@ const TaskViewer = ({ tasks }) => {
 
   return (
     <div className="task-viewer">
+    <h1>Задание</h1>
       <Accordion defaultActiveKey="0" className="mt-4">
         {tasks.map((task, index) => (
           <Accordion.Item eventKey={index.toString()} key={task.id}>
