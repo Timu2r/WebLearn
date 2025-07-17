@@ -1,9 +1,9 @@
 import { Badge, Container } from 'react-bootstrap'
 // Предполагается, что эти компоненты существуют в вашем проекте
-import ArrowNavigator from '../components/ArrowNavigator'
-import CodeJs from '../components/CodeJs'
-import TaskViewer from '../components/TaskViewer/TaskViewer'
-import { tasks } from '../data/tasks.js'
+import ArrowNavigator from '../../components/ArrowNavigator.jsx'
+import CodeJs from '../../components/CodeJs.jsx'
+import TaskViewer from '../../components/TaskViewer/TaskViewer.jsx'
+import { tasks } from '../../data/tasks.js'
 
 export default function JsFeaturesSummary() {
 	return (

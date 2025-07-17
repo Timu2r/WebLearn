@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap'
-import ArrowNavigator from '../components/ArrowNavigator'
+import ArrowNavigator from '../../components/ArrowNavigator'
 
 export default function Reference() {
 	return (

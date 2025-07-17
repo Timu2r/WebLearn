@@ -68,8 +68,8 @@ const TaskViewer = ({ tasks }) => {
     <h1>Задание</h1>
       <Accordion defaultActiveKey="0" className="mt-4">
         {tasks.map((task, index) => (
-          <Accordion.Item eventKey={index.toString()} key={task.id}>
-            <Accordion.Header>{task.id} - {task.title}</Accordion.Header>
+          <Accordion.Item eventKey={index.toString()} key={task.id} >
+            <Accordion.Header >{task.id} - {task.title}</Accordion.Header>
             <Accordion.Body>
               {renderDescription(task.description)} {/* Use the new renderDescription function */}
               <Button variant="primary" onClick={() => toggleSolution(task.id)} className="mt-3"> {/* Add mt-3 for spacing */}

@@ -1,66 +1,338 @@
+/* TaskViewer.css - Улучшенные стили */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --text-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-colored: 0 8px 32px rgba(102, 126, 234, 0.1);
+  --shadow-hover-colored: 0 12px 40px rgba(102, 126, 234, 0.2);
+
+  /* Add default text color variables if not defined elsewhere for consistency */
+  --text: #ffffff; /* Assuming white or light color for dark theme */
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent: #667eea; /* Or whichever accent color you use */
+  --font-mono: 'Roboto Mono', monospace; /* Example font, ensure it's imported or available */
+}
+
+.task-viewer {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.task-viewer h1 {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-viewer .accordion {
+  border: none;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-colored);
+}
+
 .task-viewer .accordion-item {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius);
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  background: var(--card-gradient);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.task-viewer .accordion-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--primary-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.task-viewer .accordion-item:hover::before {
+  opacity: 1;
 }
 
 .task-viewer .accordion-item:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover-colored);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
 .task-viewer .accordion-header {
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .task-viewer .accordion-header button {
-  background-color: transparent;
+  background: transparent;
   color: var(--text);
   font-weight: 600;
   font-family: var(--font-mono);
-  padding: 1rem;
+  padding: 1.5rem 2rem; /* Keep existing padding, it seems balanced */
   width: 100%;
   text-align: left;
   border: none;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center; /* Crucial for vertical alignment */
+  gap: 1rem;
+  /* Added/Modified for better consistency and alignment */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  min-height: 4rem; /* Give it a minimum height to prevent collapse if content is too short */
 }
 
 .task-viewer .accordion-header button:not(.collapsed) {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   color: var(--accent);
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.task-viewer .accordion-header button:not(.collapsed)::before {
+  transform: scaleY(1);
+}
+
+.task-viewer .accordion-header button:focus {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  outline: none;
 }
 
 .task-viewer .accordion-body {
   color: var(--text-secondary);
-  padding: 1rem;
-  background-color: var(--card-bg);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 0 12px 12px;
+  line-height: 1.6;
 }
 
 .task-viewer .accordion-body p {
   color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.task-viewer .accordion-body p:last-child {
+  margin-bottom: 0;
 }
 
 .task-viewer .btn-primary {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  transition: var(--transition);
-  margin-top: 1rem;
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-viewer .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.task-viewer .btn-primary:hover::before {
+  left: 100%;
 }
 
 .task-viewer .btn-primary:hover {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
+.task-viewer .btn-primary:active {
+  transform: translateY(0);
+}
+
+.task-viewer .btn-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.task-viewer .btn-primary:hover svg {
+  transform: scale(1.1);
+}
+
+/* Стили для блока решения */
+.text-solution-block {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(139, 195, 74, 0.05) 100%);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-solution-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--success-gradient);
+}
+
+.text-solution-block p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.text-solution-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Анимация появления решения */
+.task-viewer .mt-3 {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Улучшенная адаптивность */
 @media (max-width: 768px) {
+  .task-viewer {
+    padding: 1rem;
+  }
+
+  .task-viewer h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
   .task-viewer .accordion-header button {
     font-size: 1rem;
+    padding: 1rem 1.5rem;
+    flex-direction: column; /* This is where vertical alignment might become tricky */
+    align-items: flex-start; /* Aligns content to the start (left) */
+    gap: 0.5rem;
+    text-align: left; /* Ensure text alignment is left even when flex-direction is column */
   }
+
+  .task-viewer .accordion-body {
+    padding: 1.5rem;
+  }
+
+  .task-viewer .btn-primary {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-viewer {
+    padding: 0.5rem;
+  }
+
+  .task-viewer .accordion-header button {
+    /* Adjusted padding for smaller screens */
+    /* If the content is on multiple lines, this padding will apply to the whole block */
+    padding: 0.75rem 1rem; /* Reverted to more standard padding, adjust if still uneven */
+    font-size: 0.9rem;
+  }
+
+  .task-viewer .accordion-body {
+    padding: 1rem;
+  }
+
+  .task-viewer .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+  .task-viewer .accordion-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .task-viewer .accordion-body {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .text-solution-block {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(139, 195, 74, 0.1) 100%);
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+}
+
+/* Улучшенная доступность */
+@media (prefers-reduced-motion: reduce) {
+  .task-viewer .accordion-item,
+  .task-viewer .accordion-header button,
+  .task-viewer .btn-primary {
+    transition: none;
+  }
+
+  .task-viewer .accordion-item:hover {
+    transform: none;
+  }
+
+  .task-viewer .btn-primary:hover {
+    transform: none;
+  }
+
+  @keyframes slideIn {
+    from, to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Стили для фокуса клавиатуры */
+.task-viewer .accordion-header button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.task-viewer .btn-primary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }

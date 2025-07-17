@@ -1,12 +1,10 @@
-import { Container, Badge } from 'react-bootstrap'
-import ArrowNavigator from '../components/ArrowNavigator'
-import CodeNote from '../components/CodeNote'
-import CodeJs from '../components/CodeJs'
+import { Badge, Container } from 'react-bootstrap'
 import { FaInfoCircle } from 'react-icons/fa'
 import { IoIosWarning } from 'react-icons/io'
-import TaskViewer from '../components/TaskViewer/TaskViewer'
-import { tasks } from '../data/tasks.js'
-
+import ArrowNavigator from '../../components/ArrowNavigator.jsx'
+import CodeJs from '../../components/CodeJs.jsx'
+import TaskViewer from '../../components/TaskViewer/TaskViewer.jsx'
+import { tasks } from '../../data/tasks.js'
 
 export default function TypeConversion() {
 	return (

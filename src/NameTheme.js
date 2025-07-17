@@ -155,7 +155,7 @@ let NameThame = [
     id: '3.3',
     title: 'Комментарии',
     theme: 'Качество кода',
-    path: '/Comments',
+    path: '/CommentsDoc',
   },
   {
     id: '3.4',

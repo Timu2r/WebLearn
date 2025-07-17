@@ -1,13 +1,11 @@
 import { Container } from 'react-bootstrap'
 import { FaInfoCircle } from 'react-icons/fa'
-import ArrowNavigator from '../components/ArrowNavigator'
+import ArrowNavigator from '../../components/ArrowNavigator'
 
 export default function Introduction() {
-
 	return (
 		<Container className='text-light mt-5'>
-		
-				<ArrowNavigator />
+			<ArrowNavigator />
 			<h1
 				style={{
 					fontSize: '2rem',

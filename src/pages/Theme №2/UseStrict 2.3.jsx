@@ -1,9 +1,9 @@
 import { Container } from 'react-bootstrap'
 import { IoIosWarning } from 'react-icons/io'
-import ArrowNavigator from '../components/ArrowNavigator'
-import CodeNote from '../components/CodeNote'
-import TaskViewer from '../components/TaskViewer/TaskViewer'
-import { tasks } from '../data/tasks.js'
+import ArrowNavigator from '../../components/ArrowNavigator.jsx'
+import CodeNote from '../../components/CodeNote.jsx'
+import TaskViewer from '../../components/TaskViewer/TaskViewer.jsx'
+import { tasks } from '../../data/tasks.js'
 
 export default function UseStrict() {
 	const jsUseStric1 = ` "use strict";

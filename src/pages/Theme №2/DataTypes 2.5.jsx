@@ -1,8 +1,8 @@
 import { Container } from 'react-bootstrap'
 import { FaInfoCircle } from 'react-icons/fa'
-import ArrowNavigator from '../components/ArrowNavigator'
-import CodeJs from '../components/CodeJs'
-import CodeNote from '../components/CodeNote'
+import ArrowNavigator from '../../components/ArrowNavigator'
+import CodeJs from '../../components/CodeJs'
+import CodeNote from '../../components/CodeNote'
 
 export default function DataTypes() {
 	return (
