@@ -161,19 +161,27 @@ let NameThame = [
     id: '3.4',
     title: 'Ниндзя-код',
     theme: 'Качество кода',
-    path: '/Ninja-kod',
+    path: '/NinjaCode',
   },
   {
     id: '3.5',
     title: 'Автоматическое тестирование c использованием фреймворка Mocha',
     theme: 'Качество кода',
-    path: '/Automatictesting',
+    path: '/MochaTesting',
   },
   {
     id: '3.6',
     title: 'Полифилы',
     theme: 'Качество кода',
-    path: '/Polyphies',
+    path: '/PolyfillsDoc',
+  },
+
+ //!   
+ {
+    id: '4.1',
+    title: 'Объекты',
+    theme: 'Объекты: основы',
+    path: '/Objects',
   },
 ]
 

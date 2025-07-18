@@ -33,6 +33,9 @@ import JsFeaturesSummary from './pages/Theme №2/JsFeaturesSummary 2.18.jsx';
 import DebuggingInTheBrowser from './pages/Theme №3/DebuggingInTheBrowser 3.1.jsx';
 import CodeStyleTips from './pages/Theme №3/CodeStyleTips 3.2.jsx'
 import CommentsDoc from './pages/Theme №3/Comments 3.3.jsx';
+import NinjaCode from './pages/Theme №3/NinjaCode 3.4.jsx';
+import MochaTesting from './pages/Theme №3/MochaTesting 3.5.jsx';
+import PolyfillsDoc from './pages/Theme №3/PolyfillsDoc 3.6.jsx';
 
 
 export default function App() {
@@ -71,6 +74,9 @@ export default function App() {
         <Route path="/DebuggingInTheBrowser" element={<DebuggingInTheBrowser/>} />
         <Route path="/CodeStyleTips" element={<CodeStyleTips />} />
         <Route path="/CommentsDoc" element={<CommentsDoc />} />
+        <Route path="/NinjaCode" element={<NinjaCode />} />
+        <Route path="/MochaTesting" element={<MochaTesting />} />
+        <Route path="/PolyfillsDoc" element={<PolyfillsDoc />} />
       </Routes>
       <Footer />
     </Router>
