@@ -1,58 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>WebLearn</title>
-    <meta name="description" content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам">
-    <meta name="keywords" content="frontend, веб-разработка, HTML, CSS, JavaScript, React, обучение программированию">
-    <meta name="author" content="WebLearn Team">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="WebLearn - Изучение веб-разработки">
-    <meta property="og:description" content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам">
-    <meta property="og:image" content="https://example.com/og-image.jpg">
-    <meta property="og:url" content="https://learnfrontend.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="WebLearn">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Learn Frontend - Изучение веб-разработки">
-    <meta name="twitter:description" content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам">
-    <meta name="twitter:image" content="https://example.com/twitter-image.jpg">
-    <meta name="twitter:creator" content="@learnfrontend">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png">
-    <link rel="apple-touch-icon" href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png">
-    <link rel="icon" sizes="192x192" href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png">
-    <link rel="icon" sizes="512x512" href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#667eea">
-    <meta name="msapplication-TileColor" content="#667eea">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://learnfrontend.com">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" type="font/woff2" crossorigin>
-    
-    <script type="module" crossorigin src="/WebLearn/assets/index-BP2abmz6.js"></script>
-    <link rel="stylesheet" crossorigin href="/WebLearn/assets/index-DW4zv_xf.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<!-- SEO Meta Tags -->
+		<title>WebLearn</title>
+		<meta
+			name="description"
+			content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам"
+		/>
+		<meta
+			name="keywords"
+			content="frontend, веб-разработка, HTML, CSS, JavaScript, React, обучение программированию"
+		/>
+		<meta name="author" content="WebLearn Team" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="WebLearn - Изучение веб-разработки" />
+		<meta
+			property="og:description"
+			content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам"
+		/>
+		<meta property="og:image" content="https://example.com/og-image.jpg" />
+		<meta property="og:url" content="https://learnfrontend.com" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="WebLearn" />
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Learn Frontend - Изучение веб-разработки"
+		/>
+		<meta
+			name="twitter:description"
+			content="Изучайте frontend разработку с интерактивными уроками по HTML, CSS, JavaScript и современным фреймворкам"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://example.com/twitter-image.jpg"
+		/>
+		<meta name="twitter:creator" content="@learnfrontend" />
+
+		<!-- Favicon -->
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png"
+		/>
+		<link
+			rel="icon"
+			sizes="192x192"
+			href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png"
+		/>
+		<link
+			rel="icon"
+			sizes="512x512"
+			href="/WebLearn/assets/%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F41_20250706023321-bW9z7Q72.png"
+		/>
+
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#667eea" />
+		<meta name="msapplication-TileColor" content="#667eea" />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Canonical URL -->
+		<link rel="canonical" href="https://learnfrontend.com" />
+
+		<!-- Preload critical resources -->
+		<link
+			rel="preload"
+			as="font"
+			href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2"
+			type="font/woff2"
+			crossorigin
+		/>
+		<script type="module" crossorigin src="/WebLearn/assets/index-fyTC63BE.js"></script>
+		<link rel="stylesheet" crossorigin href="/WebLearn/assets/index-YZlQG0Ek.css">
+	</head>
+	<body>
+		<div id="root"></div>
+	</body>
 </html>
