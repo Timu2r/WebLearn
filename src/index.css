@@ -1,0 +1,46 @@
+:root {
+  --primary-bg: #f9f9f9;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --accent-color: #3498db;
+  --card-bg: #ffffff;
+  --border-color: #ecf0f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #2c3e50;
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --accent-color: #5dade2;
+    --card-bg: #34495e;
+    --border-color: #3b5368;
+  }
+}
+
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+:hover::-webkit-scrollbar,
+:focus-within::-webkit-scrollbar {
+  opacity: 0.7;
+}
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #9053f2 #2d1a4b; 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	line-height: 1.6;
+	transition: all 0.3s ease;
+	background: var(--primary-bg);
+	color: black; /* Explicitly set to black for light theme debugging */
+}
